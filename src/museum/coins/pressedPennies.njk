@@ -1,0 +1,36 @@
+---
+title: Pressed Pennies
+description: 'This is a collection of pressed pennies.'
+layout: page
+tags: museum
+sizes: '(max-width: 615px) 50vw, 100vw'
+widths: [400, 520]
+permalink: '/museum/coins/pressedPennies/index.html'
+---
+
+<p>This is a page for my {{title}}.</p>
+
+<p>Number of pennies: {{ collections.pressedPennies.length }}.</p>
+
+<section class="feature section__inner wrapper">
+  <div class="feature grid region" style="--region-space-top: var(--space-xl); --gutter: var(--space-xl) var(--space-xs)">
+    {% for item in collections.pressedPennies %}
+    <custom-card clickable class="text-step-min-1" style="--card-bg: var(--color-bg)">
+      {# {% image "./src/assets/images/museum/iolaniPalace1.png", item.data.imageFilename %} #}
+      {% if item.data.imageFilename %}
+      {% image "./src/assets/images/museum/" + item.data.imageFilename + ".png", item.data.imageFilename %}
+      {% endif %}
+      <h3 class="text-step-0" slot="headline">{{ item.data.title }}</h3>
+
+      <p slot="content">{{ item.data.description }}</p>
+      <footer slot="footer" class="repel">
+        <a class="no-indicator" href="{{ item.page.url }}"></a>
+      </footer>
+    </custom-card>
+    {% endfor %}
+  </div>
+</section>
+
+{% css "inline" %}
+  {% include "css/custom-card.css" %}
+{% endcss %}

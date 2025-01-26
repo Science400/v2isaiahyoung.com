@@ -1,8 +1,8 @@
 {
-  "name": "eleventy-excellent",
-  "version": "3.7.4",
-  "description": "Eleventy starter built around the workflow suggested by Andy Bell's buildexcellentwebsit.es.",
-  "author": "Lene Saile",
+  "name": "isaiahs-notes",
+  "version": "0.0.1",
+  "description": "My little corner of the internet.",
+  "author": "Isaiah Young",
   "license": "ISC",
   "type": "module",
   "engines": {

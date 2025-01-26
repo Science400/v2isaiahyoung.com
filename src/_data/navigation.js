@@ -5,16 +5,20 @@ export default {
       url: '/about/'
     },
     {
-      text: 'Docs',
-      url: '/get-started/'
+      text: 'Projects',
+      url: '/projects/'
     },
     {
-      text: 'Built with',
-      url: '/built-with/'
+      text: 'Slashes',
+      url: '/slashes/'
     },
     {
       text: 'Blog',
       url: '/blog/'
+    },
+    {
+      text: 'Garden',
+      url: '/garden/'
     }
   ],
   bottom: [

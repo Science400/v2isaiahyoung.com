@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Inclusive Sans';
   font-style: normal;
   font-display: swap;
@@ -26,4 +26,43 @@
   src:
     local(''),
     url('/assets/fonts/redhat/red-hat-display-v7-latin-900.woff2') format('woff2');
+} */
+
+@font-face {
+  font-family: 'Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/assets/fonts/ebgaramond/ebgaramond08-regular-webfont.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/assets/fonts/ebgaramond/ebgaramond08-italic-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'GaramondSC';
+  font-style: small-caps;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/assets/fonts/ebgaramond/ebgaramondsc08-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: monospace;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/assets/fonts/firacode/FiraCode-Regular.woff2') format('woff2');
 }

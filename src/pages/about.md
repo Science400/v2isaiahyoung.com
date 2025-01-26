@@ -1,23 +1,20 @@
 ---
 title: About
 permalink: /about/index.html
-description: 'Eleventy Excellent is inspired bythe companion website of Andy Bell’s talk "Be the browser’s mentor, not its micromanager".'
+description: 'Im just trying to figure it all out.'
 layout: page
 ---
 
-This starter uses modern CSS, fluid type & space, flexible Layouts and Progressive Enhancement, wrapped in a basic template.
+When I get sad, one of my favorite things to do is watch [videos of people throwing things in washing machines](https://www.youtube.com/results?search_query=throwing+things+in+washing+machine). Like this one...
 
-It is built around the CSS boilerplate by Andy Bell and inspired by Andy's talk **'Be the browser’s mentor, not its micromanager'**.
+<div><custom-youtube @slug="dq6T5BojXc8" @label="Front Load Washer Total Carnage"> </custom-youtube></div>
 
-If you want to know exactly how it all works, [read this article on piccalil.li](https://piccalil.li/blog/a-css-project-boilerplate/).
+Here's a `gif`.
 
-The aim is to spread the idea and use of this _excellent_ workflow. To work with it efficiently you should be familiar with [cube.fyi](https://cube.fyi/), [utopia.fyi](https://utopia.fyi/) and [every-layout.dev](https://every-layout.dev/).
+This site isn't supposted to be perfect, just good enough. But I don't actually know what I'm doing.
 
-- buildexcellentwebsit.es
-- Remix the original: https://glitch.com/edit/#!/remix/build-excellent-websites
-- Study the [original CSS boilerplate](https://github.com/Set-Creative-Studio/cube-boilerplate/tree/main)
-
-## Watch the talk
-
-<div><custom-youtube @slug="JqnMI1AXl6w" @label="Andy Bell – Be the browser’s mentor, not its micromanager"> </custom-youtube></div>
-
+```
+Monospace test
+->
+===
+```

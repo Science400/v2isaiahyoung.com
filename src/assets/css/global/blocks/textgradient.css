@@ -13,3 +13,7 @@
   background-repeat: repeat;
   background-clip: text;
 }
+
+.gradient-text-not {
+  color: var(--color-primary-highlight);
+}

@@ -17,3 +17,30 @@ export const tagList = collection => {
   });
   return Array.from(tagsSet).sort();
 };
+
+/** Pressed pennies collection */
+export const getPressedPennies = collection => {
+  const pennySet = new Set();
+  collection.getFilteredByGlob('./src/museum/coins/*.md').forEach(item => {
+    if (!item.data.tags) return;
+    item.data.tags.filter(tag => tag === 'pressedPenny').forEach(tag => pennySet.add(item));
+  });
+  return Array.from(pennySet);
+  // return collection.getFilteredByGlob('./src/museum/coins/*.md');
+}
+
+/** All garden posts as a collection. */
+export const getAllGardenPosts = collection => {
+  return collection.getFilteredByGlob('./src/garden/**/*.md');
+};
+
+/** All Captain's Logs as a collection. */
+export const getCaptainsLogs = collection => {
+  const captainsLogs = new Set();
+  collection.getFilteredByGlob('./src/garden/**/*.md').forEach(item => {
+    if (item.data.gardenType === 'captainsLog') {
+      captainsLogs.add(item);
+    }
+  })
+  return Array.from(captainsLogs);
+};

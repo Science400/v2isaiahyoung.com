@@ -1,0 +1,73 @@
+---
+title: Garden
+description: 'This is my garden.'
+layout: page
+permalink: '/garden/index.html'
+---
+
+<article class="wrapper">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <p>There are {{ collections.gardenPosts.length }} garden posts.</p>
+    <div>
+      <select id="gardenType" class="garden-type-filter" style="margin-right: 10px;">
+        <option default value="all">All</option>
+        <option value="til">Today I Learned</option>
+        <option value="essay">Essay</option>
+        <option value="captainsLog">Captain's Log</option>
+      </select>
+      <select id="gardenStatus" class="garden-status-filter">
+        <option default value="all">All</option>
+        <option value="seedling">Seedling</option>
+        <option value="budding">Budding</option>
+        <option value="evergreen">Evergreen</option>
+      </select>
+    </div>
+  </div>
+  <ul>
+    {% for item in collections.gardenPosts %}
+      <li class="garden-post" data-garden-type="{{ item.data.gardenType }}" data-garden-status="{{ item.data.gardenStatus }}">
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+        <ul>
+          <li>{{ item.data.gardenType }}</li>
+          <li>{{ item.data.gardenStatus }}</li>
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</article>
+
+<script>
+  const postTypeFilter = document.getElementById('gardenType');
+  const postStatusFilter = document.getElementById('gardenStatus');
+  const posts = document.querySelectorAll('.garden-post');
+
+  postTypeFilter.addEventListener('change', (e) => {
+    // alert('changed');
+    const selectedType = e.target.value;
+
+    posts.forEach(post => {
+      if (selectedType === 'all') {
+        post.style.display = 'block';
+      } else if (post.dataset.gardenType === selectedType) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+
+  postStatusFilter.addEventListener('change', (e) => {
+    // alert('changed');
+    const selectedStatus = e.target.value;
+
+    posts.forEach(post => {
+      if (selectedStatus === 'all') {
+        post.style.display = 'block';
+      } else if (post.dataset.gardenStatus === selectedStatus) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+</script>
