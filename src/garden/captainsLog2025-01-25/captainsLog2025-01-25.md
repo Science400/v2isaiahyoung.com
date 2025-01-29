@@ -7,9 +7,14 @@ gardenType: captainsLog
 gardenStatus: evergreen
 ---
 
-I went to [Dino Fest 2025] at the [Utah Natural History Museum] today. And it was a lot of fun and we'll probably end up going every year.
+I went to [Dino Fest 2025](https://nhmu.utah.edu/programs/dinofest) at the [Utah Natural History Museum](https://nhmu.utah.edu/) today. And it was a lot of fun and we'll probably end up going every year.
 
 I listened to several lectures.
+- Surviving Hell's Kitchen by Dr. Laura Wilson
+- Here Be Monsters by Neil Kelly
+- Prehistoric Giants from Egypt by Sanaa El-Sayed
+- Mosasaurus: Lizards to Leviathans by Joshua Lively
+- Bring Fossils to Life with Robots and Video Games by Kate Ritterbush
 
 <div class="lcars-bar"></div>
 
