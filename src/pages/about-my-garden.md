@@ -13,7 +13,7 @@ There are a couple of post formats taken from various places of inspiration.
 
 A **Captain's Log** is the closest thing to a traditional blog post because sometimes I don't know where else put my thoughts other than a summary of the past little while. But also because I'm a fan of [RSS feeds](https://openrss.org/guides/what-are-rss-feeds) and as far as I'm aware there isn't a good solution to sending out updates for a digital garden. The idea is my Captain's Log will also serve as a changelog to highlight any revisions I make. That is if anybody is strange enough to even want to subscribe.
 
-A **Clipping** is a link to something interesting by someone else. It could be a cool fact. It could be a neat article. It could be a fun game. But the idea is I can just share it without adding too much of my own commentary.
+A **Clipping** is a link to something interesting by someone else. It could be a cool fact. It could be a neat article. It could be a fun game. But the idea is I can just share it and add some of my own commentary in a constructive way without worrying about making it into my own thing. I'll be trying to follow [Simon Willison's approach to running a link blog](https://simonwillison.net/2024/Dec/22/link-blog/).
 
 I still need to come up with a name for short things that I write. That means it's not just a link to somebody else's work.
 
