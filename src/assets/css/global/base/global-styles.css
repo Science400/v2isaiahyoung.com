@@ -113,6 +113,11 @@ a:hover {
   text-decoration: none;
 }
 
+/* Dropdowns */
+option {
+  font-family: var(--font-base);
+}
+
 /* Focus styles */
 :focus-visible {
   outline: 3px solid;
