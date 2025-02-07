@@ -15,6 +15,7 @@ permalink: '/garden/index.html'
         <option value="til">Today I Learned</option>
         <option value="essay">Essay</option>
         <option value="captainsLog">Captain's Log</option>
+        <option value="showAndTell">Show and Tell</option>
       </select>
       <select id="gardenStatus" class="garden-status-filter">
         <option default value="all">All</option>
@@ -31,6 +32,7 @@ permalink: '/garden/index.html'
         <ul>
           <li>{{ item.data.gardenType }}</li>
           <li>{{ item.data.gardenStatus }}</li>
+          <li>{{ item.data.dateTended }}</li>
         </ul>
       </li>
     {% endfor %}

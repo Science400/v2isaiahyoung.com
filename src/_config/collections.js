@@ -31,7 +31,10 @@ export const getPressedPennies = collection => {
 
 /** All garden posts as a collection. */
 export const getAllGardenPosts = collection => {
-  return collection.getFilteredByGlob('./src/garden/**/*.md');
+  return collection.getFilteredByGlob('./src/garden/**/*.md')
+    .sort((a, b) => {
+      return a.data.dateTended - b.data.dateTended;
+    }).reverse();
 };
 
 /** All Captain's Logs as a collection. */
