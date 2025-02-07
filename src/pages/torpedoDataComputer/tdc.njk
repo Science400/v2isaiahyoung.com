@@ -1,0 +1,121 @@
+---
+layout: base
+title: Torpedo Data Computer Simulator
+description: 'Im trying to learn how to simulate a TDC'
+permalink: '/tdc/index.html'
+---
+
+<article class="wrapper">
+  <h1 class="text-center">{{ title }}</h1>
+
+  <div class="flex-row">
+    <div class="flex-col">
+      <form class="tdc-controls">
+        <div class="slider-group">
+          <label for="ownCourse">Own Course: <span id="ownCourseValue">0</span>°</label>
+          <input type="range" id="ownCourse" name="ownCourse"
+                min="0" max="360" value="0" step="1">
+        </div>
+        <div class="slider-group">
+          <label for="targetBearing">Target Bearing: <span id="targetBearingValue">0</span>°</label>
+          <input type="range" id="targetBearing" name="targetBearing"
+                min="0" max="360" value="0" step="1">
+        </div>
+        <div class="slider-group">
+          <label for="targetRange">Target Range: <span id="targetRangeValue">1000</span> yards</label>
+          <input type="range" id="targetRange" name="targetRange"
+                min="250" max="5000" value="1000" step="50">
+        </div>
+      </form>
+    </div>
+
+    <div class="flex-col">
+      <svg width="600" height="600" viewBox="0 0 600 600" style="border: 1px solid var(--color-base-dark); border-radius: 8px; background: var(--color-base-light)">
+        <!-- Grid Lines -->
+        <line x1="0" y1="300" x2="600" y2="300" stroke="#000" stroke-width="1" />
+        <line x1="300" y1="0" x2="300" y2="600" stroke="#000" stroke-width="1" />
+        <!-- Submarine -->
+        <circle cx="300" cy="300" r="10" fill="#1f77b4" />
+        <!-- Target -->
+        <circle cx="400" cy="300" r="10" fill="#ff7f0e" />
+      </svg>
+    </div>
+  </div>
+
+  <style>
+    .flex-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .flex-col {
+      flex: 50%;
+    }
+
+    @media screen and (max-width: 600px) {
+      .flex-row {
+        flex-direction: column;
+      }
+      .flex-col {
+        flex: 100%;
+      }
+      
+    }
+
+    .tdc-controls {
+      max-width: 400px;
+      margin: 1rem auto;
+    }
+    .slider-group {
+      margin: 1rem 0;
+    }
+    .slider-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .slider-group input {
+      width: 100%;
+    }
+    svg {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+      block-size: auto;
+    }
+  </style>
+
+  <script>
+    // Update displayed values when sliders change
+    document.getElementById('ownCourse').addEventListener('input', (e) => {
+      document.getElementById('ownCourseValue').textContent = e.target.value;
+    });
+    
+    document.getElementById('targetBearing').addEventListener('input', (e) => {
+      document.getElementById('targetBearingValue').textContent = e.target.value;
+    });
+
+    document.getElementById('targetRange').addEventListener('input', (e) => {
+      document.getElementById('targetRangeValue').textContent = e.target.value;
+    });
+
+    // Update target position when sliders change
+    function updateTargetPosition() {
+      const targetRange = document.getElementById('targetRange').value;
+      const targetBearing = document.getElementById('targetBearing').value;
+
+      const targetX = 300 + targetRange / 10 * Math.cos(targetBearing * Math.PI / 180);
+      const targetY = 300 - targetRange / 10 * Math.sin(targetBearing * Math.PI / 180);
+
+      document.querySelector('svg circle:nth-of-type(2)').setAttribute('cx', targetX);
+      document.querySelector('svg circle:nth-of-type(2)').setAttribute('cy', targetY);
+    }
+
+    document.getElementById('targetBearing').addEventListener('input', updateTargetPosition);
+    document.getElementById('targetRange').addEventListener('input', updateTargetPosition);
+
+    // Initial target position
+    updateTargetPosition();
+
+
+  </script>
+</article>
