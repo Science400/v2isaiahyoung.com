@@ -4,24 +4,583 @@
         "narrator": "Richard Hale",
         "orchestra": "Boston Symphony Orchestra",
         "conductor": "Serge Koussevitzky",
-        "label": "RCA Victor, DM 566",
         "notes": "Set of 3 shellac 12\" discs",
-        "youtube": "https://www.youtube.com/watch?v=dl6eZGBg9KY"
+        "youtube": "https://youtube.com/watch?v=dl6eZGBg9KY"
+    },
+    {
+        "year": 1941,
+        "narrator": "Basil Rathbone",
+        "orchestra": "All-American Orchestra",
+        "conductor": "Leopold Stokowski",
+        "notes": "Set of 3 shellac 12\" discs, restored from original Masterworks set by Bob Varney"
+    },
+    {
+        "year": 1949,
+        "narrator": "Sterling Holloway",
+        "orchestra": "Graunke Symphony Orchestra",
+        "conductor": "Kurt Graunke",
+        "notes": "Set of 2 vinyl 10\" discs, together with a Little Nipper Storybook from Disney; originally made for an episode in the 1946 film Make Mine Music"
+    },
+    {
+        "year": 1949,
+        "narrator": "Frank Phillips",
+        "orchestra": "London Philharmonic Orchestra",
+        "conductor": "Nikolai Malko",
+        "notes": "Frank Phillips was a well-known BBC Radio newsreader"
+    },
+    {
+        "year": 1950,
+        "narrator": "Eleanor Roosevelt",
+        "orchestra": "Boston Symphony Orchestra",
+        "conductor": "Serge Koussevitzky",
+        "notes": "mono recording; never reissued on CD"
+    },
+    {
+        "year": 1950,
+        "narrator": "Milton Cross",
+        "orchestra": "Lucy Brown, piano",
+        "conductor": "",
+        "notes": "4 shellac 10\" 78-rpm discs"
+    },
+    {
+        "year": 1953,
+        "narrator": "Alec Guinness",
+        "orchestra": "Boston Pops Orchestra",
+        "conductor": "Arthur Fiedler"
+    },
+    {
+        "year": 1953,
+        "narrator": "Victor Jory",
+        "orchestra": "Peter Pan Orchestra",
+        "conductor": "Vicky Kosen",
+        "notes": "mono recording; has never been issued on CD"
+    },
+    {
+        "year": 1954,
+        "narrator": "Richard Hale",
+        "orchestra": "Boston Pops Orchestra",
+        "conductor": "Arthur Fiedler"
+    },
+    {
+        "year": 1955,
+        "narrator": "Henry Morgan",
+        "orchestra": "Netherlands Philharmonic Orchestra",
+        "conductor": "Otto Ackermann",
+        "notes": "The Netherlands Philharmonic Orchestra is named on this record \"Concert Hall Symphony Orchestra\"."
+    },
+    {
+        "year": 1955,
+        "narrator": "Arthur Godfrey",
+        "orchestra": "Andre Kostelanetz's Orchestra",
+        "conductor": "Andre Kostelanetz",
+        "notes": "mono recording; has never been issued on CD"
+    },
+    {
+        "year": 1955,
+        "narrator": "Brandon deWilde",
+        "orchestra": "Pro Musica Symphony, Vienna",
+        "conductor": "Hans Swarowsky",
+        "notes": "PL9280 (mono), STPL59280 (stereo). Matrix VS3076"
+    },
+    {
+        "year": 1956,
+        "narrator": "Peter Ustinov",
+        "orchestra": "Philharmonia Orchestra",
+        "conductor": "Herbert von Karajan"
+    },
+    {
+        "year": 1957,
+        "narrator": "Cyril Ritchard",
+        "orchestra": "Philadelphia Orchestra",
+        "conductor": "Eugene Ormandy"
+    },
+    {
+        "year": 1957,
+        "narrator": "Boris Karloff",
+        "orchestra": "Vienna State Opera Orchestra",
+        "conductor": "Mario Rossi"
+    },
+    {
+        "year": 1959,
+        "narrator": "Michael Flanders",
+        "orchestra": "Philharmonia Orchestra",
+        "conductor": "Efrem Kurtz"
+    },
+    {
+        "year": 1959,
+        "narrator": "José Ferrer",
+        "orchestra": "Vienna State Opera Orchestra",
+        "conductor": "Sir Eugene Goossens",
+        "notes": "Narrated in Spanish and English"
+    },
+    {
+        "year": 1959,
+        "narrator": "Richard Attenborough",
+        "orchestra": "Philharmonia of Hamburg",
+        "conductor": "Hans-Jürgen Walter"
+    },
+    {
+        "year": 1960,
+        "narrator": "Beatrice Lillie",
+        "orchestra": "London Symphony Orchestra",
+        "conductor": "Skitch Henderson"
+    },
+    {
+        "year": 1960,
+        "narrator": "Captain Kangaroo",
+        "orchestra": "Stadium Symphony Orchestra of New York",
+        "conductor": "Leopold Stokowski"
+    },
+    {
+        "year": 1960,
+        "narrator": "Leonard Bernstein",
+        "orchestra": "New York Philharmonic",
+        "conductor": "Leonard Bernstein",
+        "notes": "The popularity of the group's televised Young People's Concerts made this an auspicious release. In the French release the narrator is Alban Liebl, in the German Matthias Ernst Holzmann and in the Portuguese Roberto Carlos."
+    },
+    {
+        "year": 1960,
+        "narrator": "Garry Moore",
+        "orchestra": "Philharmonic Symphony Orchestra of London",
+        "conductor": "Artur Rodziński",
+        "notes": "The reverse side of this 12-inch LP record also features The Carnival of the Animals by Saint-Saëns with Garry Moore (narrator), Josef and Grete Dichler (duopianists), and the Vienna State Opera Orchestra conducted by Hermann Scherchen."
+    },
+    {
+        "year": 1961,
+        "narrator": "Carlos Pellicer",
+        "orchestra": "Orquesta Sinfónica de México",
+        "conductor": "Carlos Chávez"
+    },
+    {
+        "year": 1962,
+        "narrator": "Kenneth Horne",
+        "orchestra": "Netherlands Philharmonic Orchestra",
+        "conductor": "Otto Ackermann"
+    },
+    {
+        "year": 1963,
+        "narrator": "Alec Clunes",
+        "orchestra": "French National Orchestra",
+        "conductor": "Lorin Maazel",
+        "notes": "In the French release the narrator is Madeleine Renaud, in the German Mathias Wieman, in the Italian Eduardo De Filippo, in the Spanish Juan Pulido and in the Japanese Tetsuko Kuroyanagi."
+    },
+    {
+        "year": 1963,
+        "narrator": "Eric Shilling",
+        "orchestra": "Czech Philharmonic Orchestra",
+        "conductor": "Karel Ančerl"
+    },
+    {
+        "year": 1965,
+        "narrator": "Lorne Greene",
+        "orchestra": "London Symphony Orchestra",
+        "conductor": "Sir Malcolm Sargent"
+    },
+    {
+        "year": 1965,
+        "narrator": "Sean Connery",
+        "orchestra": "Royal Philharmonic Orchestra",
+        "conductor": "Antal Doráti"
+    },
+    {
+        "year": 1967,
+        "narrator": "Eric Robinson",
+        "orchestra": "Royal Philharmonic Orchestra",
+        "conductor": "James Walker"
+    },
+    {
+        "year": 1968,
+        "narrator": "Robie Lester",
+        "orchestra": "Graunke Symphony Orchestra",
+        "conductor": "Kurt Graunke",
+        "notes": "originally from the 1946 film Make Mine Music"
+    },
+    {
+        "year": 1969,
+        "narrator": "Paul Daneman",
+        "orchestra": "The Little Symphony Of London",
+        "conductor": "Arthur Davison",
+        "notes": "The reverse side of this recording is Sleigh Ride (dance 3 of Three German Dances by Wolfgang Amadeus Mozart), and Toy Symphony (generally attributed to Leopold Mozart)."
+    },
+    {
+        "year": 1970,
+        "narrator": "Sir Ralph Richardson",
+        "orchestra": "London Symphony Orchestra",
+        "conductor": "Sir Malcolm Sargent",
+        "notes": "Volume 5 of The World of the Great Classics series. This version is praised in various editions of The Stereo Record Guide as the finest recording and narration of the work ever made."
+    },
+    {
+        "year": 1971,
+        "narrator": "Richard Baker",
+        "orchestra": "New Philharmonia Orchestra",
+        "conductor": "Raymond Leppard"
+    },
+    {
+        "year": 1972,
+        "narrator": "George Raft",
+        "orchestra": "London Festival Orchestra",
+        "conductor": "Stanley Black",
+        "notes": "In this version, the story is reformulated as a gangster tale in the style of the Hollywood films that Raft had once acted in."
+    },
+    {
+        "year": 1972,
+        "narrator": "Rob Reiner",
+        "orchestra": "studio orchestra",
+        "conductor": "Jerry Yester",
+        "notes": "Contemporary version by Carl Gottlieb and Rob Reiner; never released on CD"
+    },
+    {
+        "year": 1973,
+        "narrator": "Mia Farrow",
+        "orchestra": "London Symphony Orchestra",
+        "conductor": "André Previn"
+    },
+    {
+        "year": 1973,
+        "narrator": "Alec McCowen",
+        "orchestra": "Royal Concertgebouw Orchestra",
+        "conductor": "Bernard Haitink",
+        "notes": "The German release featured Hermann Prey as narrator."
+    },
+    {
+        "year": 1974,
+        "narrator": "Will Geer",
+        "orchestra": "English Chamber Orchestra",
+        "conductor": "Johannes Somary"
+    },
+    {
+        "year": 1975,
+        "narrator": "Viv Stanshall",
+        "orchestra": "various rock musicians, including Manfred Mann, Gary Moore, Phil Collins, Brian Eno, Gary Brooker, Bill Bruford, Cozy Powell, Chris Spedding, Alvin Lee, and Julie Tippett",
+        "conductor": "",
+        "notes": "Billed as a 'rock version' of Prokofiev's work"
+    },
+    {
+        "year": 1975,
+        "narrator": "Hermione Gingold",
+        "orchestra": "Vienna Philharmonic Orchestra",
+        "conductor": "Karl Böhm",
+        "notes": "The original German LP release featured Karlheinz Böhm as narrator (2530 587). The UK, and Australian releases featured Hermione Gingold (2530 588). The French release featured narrator Jean Richard (2530 640)."
+    },
+    {
+        "year": 1977,
+        "narrator": "Angela Rippon",
+        "orchestra": "Royal Philharmonic Orchestra",
+        "conductor": "Owain Arwel Hughes"
+    },
+    {
+        "year": 1978,
+        "narrator": "David Bowie",
+        "orchestra": "Philadelphia Orchestra",
+        "conductor": "Eugene Ormandy",
+        "notes": "Bowie's recording reached number 136 on the US Pop Albums chart."
+    },
+    {
+        "year": 1979,
+        "narrator": "Carol Channing",
+        "orchestra": "Cincinnati Pops Orchestra",
+        "conductor": "Erich Kunzel"
+    },
+    {
+        "year": 1980,
+        "narrator": "Tom Seaver",
+        "orchestra": "Cincinnati Pops Orchestra",
+        "conductor": "Erich Kunzel"
+    },
+    {
+        "year": 1984,
+        "narrator": "Dudley Moore, Terry Wogan",
+        "orchestra": "Boston Pops Orchestra",
+        "conductor": "John Williams",
+        "notes": "The American release (412 559–2) was narrated by Dudley Moore, while the UK release (412 556–2) featured Terry Wogan as narrator."
+    },
+    {
+        "year": 1984,
+        "narrator": "William F. Buckley Jr.",
+        "orchestra": "RTL Orchestra Luxembourg",
+        "conductor": "Leopold Hager"
+    },
+    {
+        "year": 1986,
+        "narrator": "Itzhak Perlman",
+        "orchestra": "Israel Philharmonic Orchestra",
+        "conductor": "Zubin Mehta",
+        "notes": "EMI/Angel also released an LP and later a CD with Perlman narrating in Hebrew."
+    },
+    {
+        "year": 1987,
+        "narrator": "André Previn",
+        "orchestra": "Royal Philharmonic Orchestra",
+        "conductor": "André Previn"
+    },
+    {
+        "year": 1987,
+        "narrator": "Lina Prokofiev",
+        "orchestra": "Royal Scottish National Orchestra",
+        "conductor": "Neeme Järvi",
+        "notes": "Lina Prokofiev was Sergei Prokofiev's first wife"
+    },
+    {
+        "year": 1987,
+        "narrator": "Paul Hogan",
+        "orchestra": "Orchestre de Paris",
+        "conductor": "Igor Markevitch",
+        "notes": "It retained the traditional plot but transferred the locale to the Australian Outback. This recording was withdrawn soon after its release because of unflattering portrayals of Australia's aboriginal people and is now considered \"out of print\"."
     },
     {
         "year": 1988,
         "narrator": "\"Weird Al\" Yankovic",
         "orchestra": "LSI Philharmonic",
         "conductor": "Wendy Carlos",
-        "label": "CBS Records",
         "notes": "Released as an orchestral comic adaptation of the story, narrated by \"Weird Al\" Yankovic. This also features \"The Carnival of the Animals – Part Two\", a parody of The Carnival of the Animals."
+    },
+    {
+        "year": 1989,
+        "narrator": "Jonathan Winters",
+        "orchestra": "Philharmonia Orchestra",
+        "conductor": "Efrem Kurtz"
+    },
+    {
+        "year": 1989,
+        "narrator": "Sir Peter Ustinov",
+        "orchestra": "Philharmonia Orchestra",
+        "conductor": "Philip Ellis"
+    },
+    {
+        "year": 1989,
+        "narrator": "Jeremy Nicholas",
+        "orchestra": "Czecho-Slovak Radio Symphony Orchestra",
+        "conductor": "Ondrej Lenárd"
+    },
+    {
+        "year": 1989,
+        "narrator": "Christopher Lee",
+        "orchestra": "English String Orchestra",
+        "conductor": "Sir Yehudi Menuhin"
+    },
+    {
+        "year": 1989,
+        "narrator": "Sir John Gielgud",
+        "orchestra": "Orchestra of the Academy of London",
+        "conductor": "Richard Stamp",
+        "notes": "Sir John's royalties for this recording were donated to The League of Friends of Charity Heritage, a facility for physically handicapped children."
+    },
+    {
+        "year": 1989,
+        "narrator": "Noni Hazlehurst",
+        "orchestra": "Sydney Symphony Orchestra",
+        "conductor": "Stuart Challender",
+        "notes": "Hazlehurst also narrated the Saint-Saëns/Ogden Nash The Carnival of the Animals on the same album"
+    },
+    {
+        "year": 1990,
+        "narrator": "Sting",
+        "orchestra": "Chamber Orchestra of Europe",
+        "conductor": "Claudio Abbado",
+        "notes": "CD, EAN 0028942939622. This was used in 1993 as the soundtrack to the television special Peter and the Wolf: A Prokofiev Fantasy. The French release features Charles Aznavour as narrator, the Italian Roberto Benigni, the Spanish José Carreras, the German Barbara Sukowa (EAN 0028942939424)."
+    },
+    {
+        "year": 1991,
+        "narrator": "Oleg and Gabriel Prokofiev",
+        "orchestra": "New London Orchestra",
+        "conductor": "Ronald Corp",
+        "notes": "The narrators were the son and grandson of the composer."
+    },
+    {
+        "year": 1991,
+        "narrator": "Dom DeLuise",
+        "orchestra": "The Little Orchestra Society",
+        "conductor": "Dino Anagnost",
+        "notes": "This was part of the album called \"Three Children's Classics\"."
+    },
+    {
+        "year": 1991,
+        "narrator": "Jack Lemmon",
+        "orchestra": "Prague Festival Orchestra",
+        "conductor": "Pavel Urbanek",
+        "notes": "CD, EAN 0018111538626"
+    },
+    {
+        "year": 1993,
+        "narrator": "Peter Schickele",
+        "orchestra": "Atlanta Symphony Orchestra",
+        "conductor": "Yoel Levi",
+        "notes": "With a new text by Peter Schickele."
     },
     {
         "year": 1994,
         "narrator": "Patrick Stewart",
         "orchestra": "Orchestra of the Opéra National de Lyon",
         "conductor": "Kent Nagano",
-        "label": "Erato",
-        "youtube": "https://www.youtube.com/watch?v=-v4P6NyluFw"
+        "youtube": "https://youtube.com/watch?v=-v4P6NyluFw"
+    },
+    {
+        "year": 1994,
+        "narrator": "Melissa Joan Hart",
+        "orchestra": "Boston Symphony Orchestra",
+        "conductor": "Seiji Ozawa",
+        "notes": "Hart was in her \"Clarissa\" persona from the Nickelodeon television series Clarissa Explains It All."
+    },
+    {
+        "year": 1994,
+        "narrator": "Sir John Gielgud",
+        "orchestra": "Royal Philharmonic Orchestra",
+        "conductor": "Andrea Licata"
+    },
+    {
+        "year": 1995,
+        "narrator": "Kirstie Alley",
+        "orchestra": "RCA Symphony Orchestra",
+        "conductor": "George Daugherty",
+        "notes": "From the Chuck Jones TV special Peter and the Wolf"
+    },
+    {
+        "year": 1996,
+        "narrator": "Ben Kingsley",
+        "orchestra": "London Symphony Orchestra",
+        "conductor": "Sir Charles Mackerras"
+    },
+    {
+        "year": 1997,
+        "narrator": "Dame Edna Everage",
+        "orchestra": "Melbourne Symphony Orchestra",
+        "conductor": "John Lanchbery"
+    },
+    {
+        "year": 1997,
+        "narrator": "Anthony Dowell",
+        "orchestra": "",
+        "conductor": "Ross MacGibbon, director (video)",
+        "notes": "Film of a ballet performance, starring David Johnson, Layla Harrison, Karan Lingham"
+    },
+    {
+        "year": 2000,
+        "narrator": "David Attenborough",
+        "orchestra": "BBC Philharmonic",
+        "conductor": "Yan Pascal Tortelier",
+        "notes": "for BBC Music Magazine; a free CD came with the June 2000 issue"
+    },
+    {
+        "year": 2000,
+        "narrator": "Lenny Henry",
+        "orchestra": "Nouvel Ensemble Instrumental Du Conservatoire National Supérieur De Paris",
+        "conductor": "Jacques Pési"
+    },
+    {
+        "year": 2001,
+        "narrator": "Sharon Stone",
+        "orchestra": "Orchestra of St. Luke's",
+        "conductor": "James Levine",
+        "notes": "as part of A Classic Tale: Music for Our Children (289 471 171–72, 2001)"
+    },
+    {
+        "year": 2001,
+        "narrator": "Joey Mazzarinoas Papa Bear",
+        "orchestra": "The Boston Pops Orchestra",
+        "conductor": "Keith Lockhart",
+        "notes": "as part of Elmo's Musical Adventure"
+    },
+    {
+        "year": 2003,
+        "narrator": "Antonio Banderas, Sophia Loren",
+        "orchestra": "Russian National Orchestra",
+        "conductor": "Kent Nagano",
+        "notes": "In Spanish"
+    },
+    {
+        "year": 2003,
+        "narrator": "Mikhail Gorbachev, Bill Clinton, Sophia Loren",
+        "orchestra": "Russian National Orchestra",
+        "conductor": "Kent Nagano",
+        "notes": "Released as Wolf Tracks and Peter and the Wolf. Loren narrated Peter and the Wolf, Clinton narrated Wolf Tracks (composed by Jean-Pascal Beintus with text by Walt Kraemer), and Gorbachev narrated the Introduction, Intermezzo, and Epilogue. The album won the Grammy Award for Best Spoken Word Album for Children."
+    },
+    {
+        "year": 2004,
+        "narrator": "Bradley Cole",
+        "orchestra": "Polish Chamber Philharmonic Orchestra Sopot, Ladies Swing Quartet",
+        "conductor": "Wojciech Rajski"
+    },
+    {
+        "year": 2005,
+        "narrator": "Willie Rushton",
+        "orchestra": "London Philharmonic Orchestra",
+        "conductor": "Siân Edwards"
+    },
+    {
+        "year": 2006,
+        "narrator": "Colm Feore",
+        "orchestra": "Windsor Symphony Orchestra",
+        "conductor": "John Morris Russell"
+    },
+    {
+        "year": 2007,
+        "narrator": "Michael York",
+        "orchestra": "Fort Worth Symphony Orchestra",
+        "conductor": "Miguel Harth-Bedoya"
+    },
+    {
+        "year": 2008,
+        "narrator": "Jacqueline du Pré",
+        "orchestra": "English Chamber Orchestra",
+        "conductor": "Daniel Barenboim"
+    },
+    {
+        "year": 2011,
+        "narrator": "Phillip Schofield",
+        "orchestra": "Orchestre national du Capitole de Toulouse",
+        "conductor": "Michel Plasson"
+    },
+    {
+        "year": 2012,
+        "narrator": "Bramwell Tovey",
+        "orchestra": "Vancouver Symphony Orchestra",
+        "conductor": "Bramwell Tovey",
+        "youtube": "https://www.youtube.com/watch?v=MfM7Y9Pcdzw"
+    },
+    {
+        "year": 2015,
+        "narrator": "Alice Cooper",
+        "orchestra": "Bundesjugendorchester",
+        "conductor": "Alexander Shelley"
+    },
+    {
+        "year": 2015,
+        "narrator": "Harry Shearer",
+        "orchestra": "Louisiana Philharmonic Orchestra",
+        "conductor": "Carlos Miguel Prieto"
+    },
+    {
+        "year": 2015,
+        "narrator": "David Tennant",
+        "orchestra": "The Amazing Keystone Band",
+        "conductor": ""
+    },
+    {
+        "year": 2017,
+        "narrator": "Miriam Margolyes",
+        "orchestra": "Adelaide Symphony Orchestra",
+        "conductor": "Nicholas Carter",
+        "notes": "With Britten's The Young Person's Guide to the Orchestra and Borodin's \"Polovtsian Dances\""
+    },
+    {
+        "year": 2017,
+        "narrator": "Alexander Armstrong",
+        "orchestra": "Liverpool Philharmonic Orchestra",
+        "conductor": "Vasily Petrenko"
+    },
+    {
+        "year": 2018,
+        "narrator": "Giacomo Gates",
+        "orchestra": "New England Jazz Ensemble",
+        "conductor": "Jeff Holmes",
+        "notes": "Complete Peter and the Wolf score arranged for jazz ensemble by Walter Gwardyak with modern libretto by Giacomo Gates.",
+        "youtube": "https://www.youtube.com/watch?v=zMNzL5tMwRM"
+    },
+    {
+        "year": 2021,
+        "narrator": "Viola Davis",
+        "orchestra": "Los Angeles Philharmonic",
+        "conductor": "Gustavo Dudamel",
+        "youtube": "https://www.youtube.com/watch?v=4LneI9vaTL0"
     }
 ]
