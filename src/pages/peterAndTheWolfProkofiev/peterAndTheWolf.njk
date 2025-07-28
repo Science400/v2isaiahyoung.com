@@ -14,20 +14,27 @@ permalink: '/peter-wolf/index.html'
         <th>Orchestra</th>
         <th>Conductor</th>
         <th>Notes</th>
+        <th>Listen</th>
       </tr>
     </thead>
     <tbody>
-      {% for recording in peterWolf %}
+      {% for recording in peterWolfWikipedia %}
       <tr class="clickable-row" data-href="/peter-wolf/{{ recording.year }}-{{ recording.narrator | slugify }}/" tabindex="0" role="button" aria-label="View {{ recording.narrator }} recording from {{ recording.year }}">
         <td>{{ recording.year }}</td>
         <td>{{ recording.narrator }}</td>
         <td>{{ recording.orchestra }}</td>
         <td>{{ recording.conductor }}</td>
         <td>{{ recording.notes or '' }}</td>
+        <td>
+          {% if recording.youtube %}
+            🎵
+          {% endif %}
+        </td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+  <p>Table data from <a href="https://en.wikipedia.org/wiki/Peter_and_the_Wolf">Wikipedia</a> as of 2025-07-27.</p>
 </div>
 
 {%- css "inline" -%}
