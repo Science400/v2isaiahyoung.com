@@ -1,0 +1,27 @@
+[
+    {
+        "year": 1939,
+        "narrator": "Richard Hale",
+        "orchestra": "Boston Symphony Orchestra",
+        "conductor": "Serge Koussevitzky",
+        "label": "RCA Victor, DM 566",
+        "notes": "Set of 3 shellac 12\" discs",
+        "youtube": "https://www.youtube.com/watch?v=dl6eZGBg9KY"
+    },
+    {
+        "year": 1988,
+        "narrator": "\"Weird Al\" Yankovic",
+        "orchestra": "LSI Philharmonic",
+        "conductor": "Wendy Carlos",
+        "label": "CBS Records",
+        "notes": "Released as an orchestral comic adaptation of the story, narrated by \"Weird Al\" Yankovic. This also features \"The Carnival of the Animals – Part Two\", a parody of The Carnival of the Animals."
+    },
+    {
+        "year": 1994,
+        "narrator": "Patrick Stewart",
+        "orchestra": "Orchestra of the Opéra National de Lyon",
+        "conductor": "Kent Nagano",
+        "label": "Erato",
+        "youtube": "https://www.youtube.com/watch?v=-v4P6NyluFw"
+    }
+]

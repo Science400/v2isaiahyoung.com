@@ -1,0 +1,80 @@
+---
+layout: page
+title: Peter and the Wolf
+description: "A recording of Prokofiev's Peter and the Wolf narrated by..."
+pagination:
+  data: peterWolfWikipedia
+  size: 1
+  alias: recording
+permalink: '/peter-wolf/{{recording.year}}-{{recording.narrator | slugify}}/'
+---
+
+<div>
+    {% if recording.youtube %}
+        <custom-youtube 
+            @slug="{{ recording.youtube | replace('https://www.youtube.com/watch?v=', '') }}"
+            @label="Peter and the Wolf narrated by {{ recording.narrator }}"> 
+        </custom-youtube>
+    {% endif %}
+
+    <h2>Recording Info</h2>
+    {% if recording.year %}
+    <h3>Year</h3>
+    <p>{{ recording.year }}</p>
+    {% endif %}
+
+    <h3>Narrator</h3>
+    {% if recording.narratorWikipedia.extract_html %}
+    {% if recording.narratorWikipedia.thumbnail %}
+    <div style="text-align: center;">
+        <img src="{{ recording.narratorWikipedia.thumbnail.source }}" alt="{{ recording.narrator }}" width="{{ recording.narratorWikipedia.thumbnail.width }}" height="{{ recording.narratorWikipedia.thumbnail.height }}">
+    </div>
+    {% endif %}
+    <div>{{ recording.narratorWikipedia.extract_html | safe }}</div>
+    {% if recording.narratorWikipedia.content_urls %}
+    <p><a href="{{ recording.narratorWikipedia.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+    {% endif %}
+    {% else %}
+    <p>{{ recording.narrator }}</p>
+    {% endif %}
+
+    {% if recording.orchestra %}
+    <h3>Orchestra</h3>
+    {% if recording.orchestraWikipedia.extract_html %}
+    {% if recording.orchestraWikipedia.thumbnail %}
+    <div style="text-align: center;">
+        <img src="{{ recording.orchestraWikipedia.thumbnail.source }}" alt="{{ recording.orchestra }}" width="{{ recording.orchestraWikipedia.thumbnail.width }}" height="{{ recording.orchestraWikipedia.thumbnail.height }}">
+    </div>
+    {% endif %}
+    <div>{{ recording.orchestraWikipedia.extract_html | safe }}</div>
+    {% if recording.orchestraWikipedia.content_urls %}
+    <p><a href="{{ recording.orchestraWikipedia.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+    {% endif %}
+    {% else %}
+    <p>{{ recording.orchestra }}</p>
+    {% endif %}
+    {% endif %}
+
+    {% if recording.conductor %}
+    <h3>Conductor</h3>
+    {% if recording.conductorWikipedia.extract_html %}
+    {% if recording.conductorWikipedia.thumbnail %}
+    <div style="text-align: center;">
+        <img src="{{ recording.conductorWikipedia.thumbnail.source }}" alt="{{ recording.conductor }}" width="{{ recording.conductorWikipedia.thumbnail.width }}" height="{{ recording.conductorWikipedia.thumbnail.height }}">
+    </div>
+    {% endif %}
+    <div>{{ recording.conductorWikipedia.extract_html | safe }}</div>
+    {% if recording.conductorWikipedia.content_urls %}
+    <p><a href="{{ recording.conductorWikipedia.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+    {% endif %}
+    {% else %}
+    <p>{{ recording.conductor }}</p>
+    {% endif %}
+    {% endif %}
+
+    {% if recording.notes %}
+    <h3>Notes</h3>
+    <p>{{ recording.notes }}</p>
+    {% endif %}
+    
+</div>

@@ -1,0 +1,70 @@
+---
+layout: page
+title: Peter and the Wolf
+description: 'A collection of recordings of Peter and the Wolf by Sergei Prokofiev.'
+permalink: '/peter-wolf/index.html'
+---
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Narrator</th>
+        <th>Orchestra</th>
+        <th>Conductor</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for recording in peterWolf %}
+      <tr class="clickable-row" data-href="/peter-wolf/{{ recording.year }}-{{ recording.narrator | slugify }}/" tabindex="0" role="button" aria-label="View {{ recording.narrator }} recording from {{ recording.year }}">
+        <td>{{ recording.year }}</td>
+        <td>{{ recording.narrator }}</td>
+        <td>{{ recording.orchestra }}</td>
+        <td>{{ recording.conductor }}</td>
+        <td>{{ recording.notes or '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{%- css "inline" -%}
+  {%- include 'css/table.css' -%}
+  
+  .clickable-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .clickable-row:hover,
+  .clickable-row:focus {
+    background-color: var(--color-bg-hover, rgba(0, 102, 204, 0.1));
+    outline: 2px solid var(--color-primary, #0066cc);
+    outline-offset: -2px;
+  }
+{%- endcss -%}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const clickableRows = document.querySelectorAll('.clickable-row');
+  
+  clickableRows.forEach(row => {
+    row.addEventListener('click', function() {
+      const url = this.dataset.href;
+      if (url && url !== '#') {
+        window.location.href = url;
+      }
+    });
+    
+    row.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+});
+</script>
+
