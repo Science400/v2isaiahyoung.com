@@ -6,15 +6,24 @@ pagination:
   data: peterWolfWikipedia
   size: 1
   alias: recording
-permalink: '/peter-wolf/{{recording.year}}-{{recording.narrator | slugify}}/'
+permalink: '/peter-wolf/{{recording.year}}-{{(recording.narrator | join("-") if recording.narrator is iterable and recording.narrator is not string else recording.narrator) | slugify}}/'
 ---
 
 <div>
     {% if recording.youtube %}
-        <custom-youtube 
-            @slug="{{ recording.youtube | replace('https://www.youtube.com/watch?v=', '') }}"
-            @label="Peter and the Wolf narrated by {{ recording.narrator }}"> 
-        </custom-youtube>
+        {% if recording.youtube is iterable and recording.youtube is not string %}
+            {% for youtube in recording.youtube %}
+                <custom-youtube 
+                    @slug="{{ youtube | replace('https://www.youtube.com/watch?v=', '') }}"
+                    @label="Peter and the Wolf narrated by {{ (recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) }}"> 
+                </custom-youtube>
+            {% endfor %}
+        {% else %}
+            <custom-youtube 
+                @slug="{{ recording.youtube | replace('https://www.youtube.com/watch?v=', '') }}"
+                @label="Peter and the Wolf narrated by {{ (recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) }}"> 
+            </custom-youtube>
+        {% endif %}
     {% endif %}
 
     <h2>Recording Info</h2>
@@ -23,24 +32,43 @@ permalink: '/peter-wolf/{{recording.year}}-{{recording.narrator | slugify}}/'
     <p>{{ recording.year }}</p>
     {% endif %}
 
-    <h3>Narrator</h3>
-    {% if recording.narratorWikipedia.extract_html %}
-    {% if recording.narratorWikipedia.thumbnail %}
-    <div style="text-align: center;">
-        <img src="{{ recording.narratorWikipedia.thumbnail.source }}" alt="{{ recording.narrator }}" width="{{ recording.narratorWikipedia.thumbnail.width }}" height="{{ recording.narratorWikipedia.thumbnail.height }}">
-    </div>
-    {% endif %}
-    <div>{{ recording.narratorWikipedia.extract_html | safe }}</div>
-    {% if recording.narratorWikipedia.content_urls %}
-    <p><a href="{{ recording.narratorWikipedia.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
-    {% endif %}
+    <h3>Narrator{{ 's' if recording.narrator is iterable and recording.narrator is not string and recording.narrator | length > 1 else '' }}</h3>
+    {% if recording.narrator is iterable and recording.narrator is not string %}
+        {% for narrator in recording.narrator %}
+            {% if recording.narratorWikipedia and recording.narratorWikipedia[loop.index0] and recording.narratorWikipedia[loop.index0].extract_html %}
+                {% if recording.narratorWikipedia[loop.index0].thumbnail %}
+                <div style="text-align: center;">
+                    <img src="{{ recording.narratorWikipedia[loop.index0].thumbnail.source }}" alt="{{ narrator }}" width="{{ recording.narratorWikipedia[loop.index0].thumbnail.width }}" height="{{ recording.narratorWikipedia[loop.index0].thumbnail.height }}">
+                </div>
+                {% endif %}
+                <h4>{{ narrator }}</h4>
+                <div>{{ recording.narratorWikipedia[loop.index0].extract_html | safe }}</div>
+                {% if recording.narratorWikipedia[loop.index0].content_urls %}
+                <p><a href="{{ recording.narratorWikipedia[loop.index0].content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+                {% endif %}
+            {% else %}
+                <h4>{{ narrator }}</h4>
+            {% endif %}
+        {% endfor %}
     {% else %}
-    <p>{{ recording.narrator }}</p>
+        {% if recording.narratorWikipedia and recording.narratorWikipedia[0] and recording.narratorWikipedia[0].extract_html %}
+        {% if recording.narratorWikipedia[0].thumbnail %}
+        <div style="text-align: center;">
+            <img src="{{ recording.narratorWikipedia[0].thumbnail.source }}" alt="{{ recording.narrator }}" width="{{ recording.narratorWikipedia[0].thumbnail.width }}" height="{{ recording.narratorWikipedia[0].thumbnail.height }}">
+        </div>
+        {% endif %}
+        <div>{{ recording.narratorWikipedia[0].extract_html | safe }}</div>
+        {% if recording.narratorWikipedia[0].content_urls %}
+        <p><a href="{{ recording.narratorWikipedia[0].content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+        {% endif %}
+        {% else %}
+        <p>{{ recording.narrator }}</p>
+        {% endif %}
     {% endif %}
 
     {% if recording.orchestra %}
     <h3>Orchestra</h3>
-    {% if recording.orchestraWikipedia.extract_html %}
+    {% if recording.orchestraWikipedia and recording.orchestraWikipedia.extract_html %}
     {% if recording.orchestraWikipedia.thumbnail %}
     <div style="text-align: center;">
         <img src="{{ recording.orchestraWikipedia.thumbnail.source }}" alt="{{ recording.orchestra }}" width="{{ recording.orchestraWikipedia.thumbnail.width }}" height="{{ recording.orchestraWikipedia.thumbnail.height }}">
@@ -57,7 +85,7 @@ permalink: '/peter-wolf/{{recording.year}}-{{recording.narrator | slugify}}/'
 
     {% if recording.conductor %}
     <h3>Conductor</h3>
-    {% if recording.conductorWikipedia.extract_html %}
+    {% if recording.conductorWikipedia and recording.conductorWikipedia.extract_html %}
     {% if recording.conductorWikipedia.thumbnail %}
     <div style="text-align: center;">
         <img src="{{ recording.conductorWikipedia.thumbnail.source }}" alt="{{ recording.conductor }}" width="{{ recording.conductorWikipedia.thumbnail.width }}" height="{{ recording.conductorWikipedia.thumbnail.height }}">

@@ -27,6 +27,13 @@ async function getWikipediaData(searchTerm) {
   }
 }
 
+// Helper function to handle arrays and strings
+function normalizeToArray(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+  return [value];
+}
+
 export default async function() {
   const peterWolfData = await import('./peterWolf.json', { with: { type: 'json' } });
   const recordings = peterWolfData.default;
@@ -34,16 +41,21 @@ export default async function() {
   const wikipediaData = [];
   
   for (const recording of recordings) {
-    // Fetch Wikipedia data for narrator, orchestra, and conductor
-    const [narratorWiki, orchestraWiki, conductorWiki] = await Promise.all([
-      getWikipediaData(recording.narrator),
+    // Normalize arrays for narrator
+    const narrators = normalizeToArray(recording.narrator);
+    
+    // Fetch Wikipedia data for each narrator, orchestra, and conductor
+    const narratorPromises = narrators.map(narrator => getWikipediaData(narrator));
+    const narratorWikis = await Promise.all(narratorPromises);
+    
+    const [orchestraWiki, conductorWiki] = await Promise.all([
       getWikipediaData(recording.orchestra),
       getWikipediaData(recording.conductor)
     ]);
     
     wikipediaData.push({
       ...recording,
-      narratorWikipedia: narratorWiki,
+      narratorWikipedia: narratorWikis, // Array of Wikipedia data for each narrator
       orchestraWikipedia: orchestraWiki,
       conductorWikipedia: conductorWiki
     });

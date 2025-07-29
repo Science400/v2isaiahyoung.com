@@ -285,7 +285,7 @@
     {
         "year": 1975,
         "narrator": "Viv Stanshall",
-        "orchestra": "various rock musicians, including Manfred Mann, Gary Moore, Phil Collins, Brian Eno, Gary Brooker, Bill Bruford, Cozy Powell, Chris Spedding, Alvin Lee, and Julie Tippett",
+        "orchestra": ["various rock musicians, including ", "Manfred Mann", "Gary Moore", "Phil Collins", "Brian Eno", "Gary Brooker", "Bill Bruford", "Cozy Powell", "Chris Spedding", "Alvin Lee", "Julie Tippett"],
         "conductor": "",
         "notes": "Billed as a 'rock version' of Prokofiev's work"
     },
@@ -365,7 +365,7 @@
         "narrator": "Paul Hogan",
         "orchestra": "Orchestre de Paris",
         "conductor": "Igor Markevitch",
-        "notes": "It retained the traditional plot but transferred the locale to the Australian Outback. This recording was withdrawn soon after its release because of unflattering portrayals of Australia's aboriginal people and is now considered \"out of print\"."
+        "notes": "It retained the traditional plot but transferred the locale to the Australian Outback. This recording was withdrawn soon after its release because of unflattering portrayals of Australia's aboriginal people and is now considered \"out of print\". It is available on YouTube, but was not included here."
     },
     {
         "year": 1988,
@@ -426,7 +426,7 @@
     },
     {
         "year": 1991,
-        "narrator": "Oleg and Gabriel Prokofiev",
+        "narrator": ["Oleg Prokofiev", "Gabriel Prokofiev"],
         "orchestra": "New London Orchestra",
         "conductor": "Ronald Corp",
         "notes": "The narrators were the son and grandson of the composer.",
