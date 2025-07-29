@@ -1,72 +1,63 @@
 import fetch from '@11ty/eleventy-fetch';
-import { readFile } from 'fs/promises';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 async function getWikipediaData(searchTerm) {
-  // Skip empty search terms
-  if (!searchTerm || searchTerm.trim() === '') {
-    return null;
-  }
-
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(searchTerm)}`;
+  if (!searchTerm) return null;
   
   try {
-    let data = await fetch(url, {
-      duration: '1d',
+    const cleanedTerm = searchTerm.replace(/"/g, ''); // Remove quotes
+    const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanedTerm)}`;
+    
+    const summary = await fetch(wikipediaUrl, {
+      duration: '1d', // Cache for 1 day
       type: 'json'
     });
     
     return {
-      title: data.title,
-      extract: data.extract,
-      thumbnail: data.thumbnail?.source,
-      url: data.content_urls?.desktop?.page
+      extract_html: summary.extract_html || '',
+      thumbnail: summary.thumbnail || null,
+      content_urls: summary.content_urls || null
     };
   } catch (error) {
-    console.warn(`Failed to fetch Wikipedia data for "${searchTerm}":`, error.message);
-    return null;
+    console.warn(`Could not fetch Wikipedia data for ${searchTerm}:`, error.message);
+    return {
+      extract_html: '',
+      thumbnail: null,
+      content_urls: null
+    };
   }
 }
 
 // Helper function to handle arrays and strings
 function normalizeToArray(value) {
-  if (Array.isArray(value)) {
-    return value;
-  }
-  return value ? [value] : [];
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+  return [value];
 }
 
 export default async function() {
-  // Read the JSON file using fs/promises instead of import
-  const jsonPath = join(__dirname, 'peterWolf.json');
-  const jsonContent = await readFile(jsonPath, 'utf-8');
-  const recordings = JSON.parse(jsonContent);
+  const peterWolfData = await import('./peterWolf.json', { with: { type: 'json' } });
+  const recordings = peterWolfData.default;
   
   const wikipediaData = [];
   
   for (const recording of recordings) {
-    // Normalize arrays for narrator and orchestra
+    // Normalize arrays for narrator
     const narrators = normalizeToArray(recording.narrator);
-    const orchestras = normalizeToArray(recording.orchestra);
     
     // Fetch Wikipedia data for each narrator, orchestra, and conductor
     const narratorPromises = narrators.map(narrator => getWikipediaData(narrator));
     const narratorWikis = await Promise.all(narratorPromises);
     
-    const orchestraPromises = orchestras.map(orchestra => getWikipediaData(orchestra));
-    const orchestraWikis = await Promise.all(orchestraPromises);
-    
-    const conductorWiki = await getWikipediaData(recording.conductor);
+    const [orchestraWiki, conductorWiki] = await Promise.all([
+      getWikipediaData(recording.orchestra),
+      getWikipediaData(recording.conductor)
+    ]);
     
     wikipediaData.push({
       ...recording,
-      narratorWikis: narratorWikis.filter(wiki => wiki !== null),
-      orchestraWikis: orchestraWikis.filter(wiki => wiki !== null),
-      conductorWiki
+      narratorWikipedia: narratorWikis, // Array of Wikipedia data for each narrator
+      orchestraWikipedia: orchestraWiki,
+      conductorWikipedia: conductorWiki
     });
   }
   
