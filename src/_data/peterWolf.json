@@ -12,14 +12,16 @@
         "narrator": "Basil Rathbone",
         "orchestra": "All-American Orchestra",
         "conductor": "Leopold Stokowski",
-        "notes": "Set of 3 shellac 12\" discs, restored from original Masterworks set by Bob Varney"
+        "notes": "Set of 3 shellac 12\" discs, restored from original Masterworks set by Bob Varney",
+        "youtube": "https://www.youtube.com/watch?v=1wZZnhxG1Wo"
     },
     {
         "year": 1949,
         "narrator": "Sterling Holloway",
         "orchestra": "Graunke Symphony Orchestra",
         "conductor": "Kurt Graunke",
-        "notes": "Set of 2 vinyl 10\" discs, together with a Little Nipper Storybook from Disney; originally made for an episode in the 1946 film Make Mine Music"
+        "notes": "Set of 2 vinyl 10\" discs, together with a Little Nipper Storybook from Disney; originally made for an episode in the 1946 film Make Mine Music",
+        "youtube": "https://www.youtube.com/watch?v=w-Ierm1aN-I"
     },
     {
         "year": 1949,
@@ -33,7 +35,8 @@
         "narrator": "Eleanor Roosevelt",
         "orchestra": "Boston Symphony Orchestra",
         "conductor": "Serge Koussevitzky",
-        "notes": "mono recording; never reissued on CD"
+        "notes": "mono recording; never reissued on CD",
+        "youtube": "https://www.youtube.com/watch?v=tJZaCPjS3Mw"
     },
     {
         "year": 1950,
@@ -46,14 +49,16 @@
         "year": 1953,
         "narrator": "Alec Guinness",
         "orchestra": "Boston Pops Orchestra",
-        "conductor": "Arthur Fiedler"
+        "conductor": "Arthur Fiedler",
+        "youtube": "https://www.youtube.com/watch?v=zILQzPcEy24"
     },
     {
         "year": 1953,
         "narrator": "Victor Jory",
         "orchestra": "Peter Pan Orchestra",
         "conductor": "Vicky Kosen",
-        "notes": "mono recording; has never been issued on CD"
+        "notes": "mono recording; has never been issued on CD",
+        "youtube": "https://www.youtube.com/watch?v=D5L-jpMdBNc"
     },
     {
         "year": 1954,
@@ -73,45 +78,53 @@
         "narrator": "Arthur Godfrey",
         "orchestra": "Andre Kostelanetz's Orchestra",
         "conductor": "Andre Kostelanetz",
-        "notes": "mono recording; has never been issued on CD"
+        "notes": "mono recording; has never been issued on CD",
+        "youtube": "https://www.youtube.com/watch?v=GEwfTIPYeo4"
     },
     {
         "year": 1955,
         "narrator": "Brandon deWilde",
         "orchestra": "Pro Musica Symphony, Vienna",
         "conductor": "Hans Swarowsky",
-        "notes": "PL9280 (mono), STPL59280 (stereo). Matrix VS3076"
+        "notes": "PL9280 (mono), STPL59280 (stereo). Matrix VS3076",
+        "youtube": "https://www.youtube.com/watch?v=AzvI9Qo-jf8"
     },
     {
         "year": 1956,
         "narrator": "Peter Ustinov",
         "orchestra": "Philharmonia Orchestra",
-        "conductor": "Herbert von Karajan"
+        "conductor": "Herbert von Karajan",
+        "youtube": "https://www.youtube.com/watch?v=W0o1YmgYq4c"
     },
     {
         "year": 1957,
         "narrator": "Cyril Ritchard",
         "orchestra": "Philadelphia Orchestra",
-        "conductor": "Eugene Ormandy"
+        "conductor": "Eugene Ormandy",
+        "youtube": "https://www.youtube.com/watch?v=oSfOHVCqUr0"
     },
     {
         "year": 1957,
         "narrator": "Boris Karloff",
         "orchestra": "Vienna State Opera Orchestra",
-        "conductor": "Mario Rossi"
+        "conductor": "Mario Rossi",
+        "youtube": "https://www.youtube.com/watch?v=IB66bInIXAY"
     },
     {
         "year": 1959,
         "narrator": "Michael Flanders",
         "orchestra": "Philharmonia Orchestra",
-        "conductor": "Efrem Kurtz"
+        "conductor": "Efrem Kurtz",
+        "youtube": ["https://www.youtube.com/watch?v=2aufKagbxf0",
+                    "https://www.youtube.com/watch?v=3bp-IspIlR0"]
     },
     {
         "year": 1959,
         "narrator": "José Ferrer",
         "orchestra": "Vienna State Opera Orchestra",
         "conductor": "Sir Eugene Goossens",
-        "notes": "Narrated in Spanish and English"
+        "notes": "Narrated in Spanish and English",
+        "youtube": "https://www.youtube.com/watch?v=Rpj7JfzJHz0"
     },
     {
         "year": 1959,
@@ -123,27 +136,31 @@
         "year": 1960,
         "narrator": "Beatrice Lillie",
         "orchestra": "London Symphony Orchestra",
-        "conductor": "Skitch Henderson"
+        "conductor": "Skitch Henderson",
+        "youtube": "https://www.youtube.com/watch?v=fCpcBRjusVU"
     },
     {
         "year": 1960,
         "narrator": "Captain Kangaroo",
         "orchestra": "Stadium Symphony Orchestra of New York",
-        "conductor": "Leopold Stokowski"
+        "conductor": "Leopold Stokowski",
+        "youtube": "https://www.youtube.com/watch?v=-GZgEbMRiss"
     },
     {
         "year": 1960,
         "narrator": "Leonard Bernstein",
         "orchestra": "New York Philharmonic",
         "conductor": "Leonard Bernstein",
-        "notes": "The popularity of the group's televised Young People's Concerts made this an auspicious release. In the French release the narrator is Alban Liebl, in the German Matthias Ernst Holzmann and in the Portuguese Roberto Carlos."
+        "notes": "The popularity of the group's televised Young People's Concerts made this an auspicious release. In the French release the narrator is Alban Liebl, in the German Matthias Ernst Holzmann and in the Portuguese Roberto Carlos.",
+        "youtube": "https://www.youtube.com/watch?v=TYl2OWuijFE"
     },
     {
         "year": 1960,
         "narrator": "Garry Moore",
         "orchestra": "Philharmonic Symphony Orchestra of London",
         "conductor": "Artur Rodziński",
-        "notes": "The reverse side of this 12-inch LP record also features The Carnival of the Animals by Saint-Saëns with Garry Moore (narrator), Josef and Grete Dichler (duopianists), and the Vienna State Opera Orchestra conducted by Hermann Scherchen."
+        "notes": "The reverse side of this 12-inch LP record also features The Carnival of the Animals by Saint-Saëns with Garry Moore (narrator), Josef and Grete Dichler (duopianists), and the Vienna State Opera Orchestra conducted by Hermann Scherchen.",
+        "youtube": "https://www.youtube.com/watch?v=Ash9epiqtso"
     },
     {
         "year": 1961,
@@ -155,98 +172,115 @@
         "year": 1962,
         "narrator": "Kenneth Horne",
         "orchestra": "Netherlands Philharmonic Orchestra",
-        "conductor": "Otto Ackermann"
+        "conductor": "Otto Ackermann",
+        "youtube": "https://www.youtube.com/watch?v=DPOECV2kDRc"
     },
     {
         "year": 1963,
         "narrator": "Alec Clunes",
         "orchestra": "French National Orchestra",
         "conductor": "Lorin Maazel",
-        "notes": "In the French release the narrator is Madeleine Renaud, in the German Mathias Wieman, in the Italian Eduardo De Filippo, in the Spanish Juan Pulido and in the Japanese Tetsuko Kuroyanagi."
+        "notes": "In the French release the narrator is Madeleine Renaud, in the German Mathias Wieman, in the Italian Eduardo De Filippo, in the Spanish Juan Pulido and in the Japanese Tetsuko Kuroyanagi.",
+        "youtube": "https://www.youtube.com/watch?v=evJcg8F5AiE"
     },
     {
         "year": 1963,
         "narrator": "Eric Shilling",
         "orchestra": "Czech Philharmonic Orchestra",
-        "conductor": "Karel Ančerl"
+        "conductor": "Karel Ančerl",
+        "youtube": "https://www.youtube.com/watch?v=MkYIa1tWycI"
     },
     {
         "year": 1965,
         "narrator": "Lorne Greene",
         "orchestra": "London Symphony Orchestra",
-        "conductor": "Sir Malcolm Sargent"
+        "conductor": "Sir Malcolm Sargent",
+        "youtube": "https://www.youtube.com/watch?v=y9Jr0NPHFuo"
     },
     {
         "year": 1965,
         "narrator": "Sean Connery",
         "orchestra": "Royal Philharmonic Orchestra",
-        "conductor": "Antal Doráti"
+        "conductor": "Antal Doráti",
+        "youtube": "https://www.youtube.com/watch?v=7TDntA6hz70"
     },
     {
         "year": 1967,
         "narrator": "Eric Robinson",
         "orchestra": "Royal Philharmonic Orchestra",
-        "conductor": "James Walker"
+        "conductor": "James Walker",
+        "youtube": "https://www.youtube.com/watch?v=rQYe4eQSgT4"
     },
     {
         "year": 1968,
         "narrator": "Robie Lester",
         "orchestra": "Graunke Symphony Orchestra",
         "conductor": "Kurt Graunke",
-        "notes": "originally from the 1946 film Make Mine Music"
+        "notes": "originally from the 1946 film Make Mine Music",
+        "youtube": "https://www.youtube.com/watch?v=JtDHq-Eyi8s"
     },
     {
         "year": 1969,
         "narrator": "Paul Daneman",
         "orchestra": "The Little Symphony Of London",
         "conductor": "Arthur Davison",
-        "notes": "The reverse side of this recording is Sleigh Ride (dance 3 of Three German Dances by Wolfgang Amadeus Mozart), and Toy Symphony (generally attributed to Leopold Mozart)."
+        "notes": "The reverse side of this recording is Sleigh Ride (dance 3 of Three German Dances by Wolfgang Amadeus Mozart), and Toy Symphony (generally attributed to Leopold Mozart).",
+        "youtube": "https://www.youtube.com/watch?v=Im8TwgcfTZM"
     },
     {
         "year": 1970,
         "narrator": "Sir Ralph Richardson",
         "orchestra": "London Symphony Orchestra",
         "conductor": "Sir Malcolm Sargent",
-        "notes": "Volume 5 of The World of the Great Classics series. This version is praised in various editions of The Stereo Record Guide as the finest recording and narration of the work ever made."
+        "notes": "Volume 5 of The World of the Great Classics series. This version is praised in various editions of The Stereo Record Guide as the finest recording and narration of the work ever made.",
+        "youtube": "https://www.youtube.com/watch?v=-NSMidvLljI"
     },
     {
         "year": 1971,
         "narrator": "Richard Baker",
         "orchestra": "New Philharmonia Orchestra",
-        "conductor": "Raymond Leppard"
+        "conductor": "Raymond Leppard",
+        "youtube": "https://www.youtube.com/watch?v=xmvu0PWmvT4"
     },
     {
         "year": 1972,
         "narrator": "George Raft",
         "orchestra": "London Festival Orchestra",
         "conductor": "Stanley Black",
-        "notes": "In this version, the story is reformulated as a gangster tale in the style of the Hollywood films that Raft had once acted in."
+        "notes": "In this version, the story is reformulated as a gangster tale in the style of the Hollywood films that Raft had once acted in.",
+        "youtube": "https://www.youtube.com/watch?v=4zrGV7opb8U"
     },
     {
         "year": 1972,
         "narrator": "Rob Reiner",
         "orchestra": "studio orchestra",
         "conductor": "Jerry Yester",
-        "notes": "Contemporary version by Carl Gottlieb and Rob Reiner; never released on CD"
+        "notes": "Contemporary version by Carl Gottlieb and Rob Reiner; never released on CD",
+        "youtube": ["https://www.youtube.com/watch?v=03b6yRots9s",
+                    "https://www.youtube.com/watch?v=7IjBU9GQTyc",
+                    "https://www.youtube.com/watch?v=6sbH2QItIXw"]
     },
     {
         "year": 1973,
         "narrator": "Mia Farrow",
         "orchestra": "London Symphony Orchestra",
-        "conductor": "André Previn"
+        "conductor": "André Previn",
+        "youtube": "https://www.youtube.com/watch?v=lZcyOvdDWTc"
     },
     {
         "year": 1973,
         "narrator": "Alec McCowen",
         "orchestra": "Royal Concertgebouw Orchestra",
         "conductor": "Bernard Haitink",
-        "notes": "The German release featured Hermann Prey as narrator."
+        "notes": "The German release featured Hermann Prey as narrator.",
+        "youtube": "https://www.youtube.com/watch?v=H760u32jKJE"
     },
     {
         "year": 1974,
         "narrator": "Will Geer",
         "orchestra": "English Chamber Orchestra",
-        "conductor": "Johannes Somary"
+        "conductor": "Johannes Somary",
+        "youtube": "https://www.youtube.com/watch?v=DgaE-XUu8rM"
     },
     {
         "year": 1975,
@@ -266,14 +300,16 @@
         "year": 1977,
         "narrator": "Angela Rippon",
         "orchestra": "Royal Philharmonic Orchestra",
-        "conductor": "Owain Arwel Hughes"
+        "conductor": "Owain Arwel Hughes",
+        "youtube": "https://www.youtube.com/watch?v=q3I_dIuFrvE"
     },
     {
         "year": 1978,
         "narrator": "David Bowie",
         "orchestra": "Philadelphia Orchestra",
         "conductor": "Eugene Ormandy",
-        "notes": "Bowie's recording reached number 136 on the US Pop Albums chart."
+        "notes": "Bowie's recording reached number 136 on the US Pop Albums chart.",
+        "youtube": "https://www.youtube.com/watch?v=9vr4JRbz8Yg"
     },
     {
         "year": 1979,
@@ -289,10 +325,11 @@
     },
     {
         "year": 1984,
-        "narrator": "Dudley Moore, Terry Wogan",
+        "narrator": ["Dudley Moore, Terry Wogan"],
         "orchestra": "Boston Pops Orchestra",
         "conductor": "John Williams",
-        "notes": "The American release (412 559–2) was narrated by Dudley Moore, while the UK release (412 556–2) featured Terry Wogan as narrator."
+        "notes": "The American release (412 559–2) was narrated by Dudley Moore, while the UK release (412 556–2) featured Terry Wogan as narrator.",
+        "youtube": "https://www.youtube.com/watch?v=Y1mF7_TE6r4"
     },
     {
         "year": 1984,
@@ -305,20 +342,23 @@
         "narrator": "Itzhak Perlman",
         "orchestra": "Israel Philharmonic Orchestra",
         "conductor": "Zubin Mehta",
-        "notes": "EMI/Angel also released an LP and later a CD with Perlman narrating in Hebrew."
+        "notes": "EMI/Angel also released an LP and later a CD with Perlman narrating in Hebrew.",
+        "youtube": "https://www.youtube.com/watch?v=MFEuG-lZq2A"
     },
     {
         "year": 1987,
         "narrator": "André Previn",
         "orchestra": "Royal Philharmonic Orchestra",
-        "conductor": "André Previn"
+        "conductor": "André Previn",
+        "youtube": "https://www.youtube.com/watch?v=JqBHNZg0OdI"
     },
     {
         "year": 1987,
         "narrator": "Lina Prokofiev",
         "orchestra": "Royal Scottish National Orchestra",
         "conductor": "Neeme Järvi",
-        "notes": "Lina Prokofiev was Sergei Prokofiev's first wife"
+        "notes": "Lina Prokofiev was Sergei Prokofiev's first wife",
+        "youtube": "https://www.youtube.com/watch?v=RP8g4aS6nwQ"
     },
     {
         "year": 1987,
@@ -338,13 +378,15 @@
         "year": 1989,
         "narrator": "Jonathan Winters",
         "orchestra": "Philharmonia Orchestra",
-        "conductor": "Efrem Kurtz"
+        "conductor": "Efrem Kurtz",
+        "youtube": "https://www.youtube.com/watch?v=FRKRs1mcInw"
     },
     {
         "year": 1989,
         "narrator": "Sir Peter Ustinov",
         "orchestra": "Philharmonia Orchestra",
-        "conductor": "Philip Ellis"
+        "conductor": "Philip Ellis",
+        "youtube": "https://www.youtube.com/watch?v=W0o1YmgYq4c"
     },
     {
         "year": 1989,
@@ -356,14 +398,16 @@
         "year": 1989,
         "narrator": "Christopher Lee",
         "orchestra": "English String Orchestra",
-        "conductor": "Sir Yehudi Menuhin"
+        "conductor": "Sir Yehudi Menuhin",
+        "youtube": "https://www.youtube.com/watch?v=sZkaJ5wIog0"
     },
     {
         "year": 1989,
         "narrator": "Sir John Gielgud",
         "orchestra": "Orchestra of the Academy of London",
         "conductor": "Richard Stamp",
-        "notes": "Sir John's royalties for this recording were donated to The League of Friends of Charity Heritage, a facility for physically handicapped children."
+        "notes": "Sir John's royalties for this recording were donated to The League of Friends of Charity Heritage, a facility for physically handicapped children.",
+        "youtube": "https://www.youtube.com/watch?v=oZ5WMZUbKy4"
     },
     {
         "year": 1989,
@@ -377,28 +421,32 @@
         "narrator": "Sting",
         "orchestra": "Chamber Orchestra of Europe",
         "conductor": "Claudio Abbado",
-        "notes": "CD, EAN 0028942939622. This was used in 1993 as the soundtrack to the television special Peter and the Wolf: A Prokofiev Fantasy. The French release features Charles Aznavour as narrator, the Italian Roberto Benigni, the Spanish José Carreras, the German Barbara Sukowa (EAN 0028942939424)."
+        "notes": "CD, EAN 0028942939622. This was used in 1993 as the soundtrack to the television special Peter and the Wolf: A Prokofiev Fantasy. The French release features Charles Aznavour as narrator, the Italian Roberto Benigni, the Spanish José Carreras, the German Barbara Sukowa (EAN 0028942939424).",
+        "youtube": "https://www.youtube.com/watch?v=AuqgqqpFoZw"
     },
     {
         "year": 1991,
         "narrator": "Oleg and Gabriel Prokofiev",
         "orchestra": "New London Orchestra",
         "conductor": "Ronald Corp",
-        "notes": "The narrators were the son and grandson of the composer."
+        "notes": "The narrators were the son and grandson of the composer.",
+        "youtube": "https://www.youtube.com/watch?v=TdrEZG8Ccu4"
     },
     {
         "year": 1991,
         "narrator": "Dom DeLuise",
         "orchestra": "The Little Orchestra Society",
         "conductor": "Dino Anagnost",
-        "notes": "This was part of the album called \"Three Children's Classics\"."
+        "notes": "This was part of the album called \"Three Children's Classics\".",
+        "youtube": "https://www.youtube.com/watch?v=NYe8IJHWEH4"
     },
     {
         "year": 1991,
         "narrator": "Jack Lemmon",
         "orchestra": "Prague Festival Orchestra",
         "conductor": "Pavel Urbanek",
-        "notes": "CD, EAN 0018111538626"
+        "notes": "CD, EAN 0018111538626",
+        "youtube": "https://www.youtube.com/watch?v=28JTQJvsaZw"
     },
     {
         "year": 1993,
@@ -419,7 +467,8 @@
         "narrator": "Melissa Joan Hart",
         "orchestra": "Boston Symphony Orchestra",
         "conductor": "Seiji Ozawa",
-        "notes": "Hart was in her \"Clarissa\" persona from the Nickelodeon television series Clarissa Explains It All."
+        "notes": "Hart was in her \"Clarissa\" persona from the Nickelodeon television series Clarissa Explains It All.",
+        "youtube": "https://www.youtube.com/watch?v=TV2ZJmbKdHY"
     },
     {
         "year": 1994,
@@ -432,7 +481,8 @@
         "narrator": "Kirstie Alley",
         "orchestra": "RCA Symphony Orchestra",
         "conductor": "George Daugherty",
-        "notes": "From the Chuck Jones TV special Peter and the Wolf"
+        "notes": "From the Chuck Jones TV special Peter and the Wolf",
+        "youtube": "https://www.youtube.com/watch?v=LpHVWkQptuY"
     },
     {
         "year": 1996,
@@ -444,14 +494,16 @@
         "year": 1997,
         "narrator": "Dame Edna Everage",
         "orchestra": "Melbourne Symphony Orchestra",
-        "conductor": "John Lanchbery"
+        "conductor": "John Lanchbery",
+        "youtube": "https://www.youtube.com/watch?v=h-uqtpBlcHg"
     },
     {
         "year": 1997,
         "narrator": "Anthony Dowell",
         "orchestra": "",
         "conductor": "Ross MacGibbon, director (video)",
-        "notes": "Film of a ballet performance, starring David Johnson, Layla Harrison, Karan Lingham"
+        "notes": "Film of a ballet performance, starring David Johnson, Layla Harrison, Karan Lingham",
+        "youtube": "https://www.youtube.com/watch?v=iCoBFTw64b0"
     },
     {
         "year": 2000,
@@ -464,14 +516,16 @@
         "year": 2000,
         "narrator": "Lenny Henry",
         "orchestra": "Nouvel Ensemble Instrumental Du Conservatoire National Supérieur De Paris",
-        "conductor": "Jacques Pési"
+        "conductor": "Jacques Pési",
+        "youtube": "https://www.youtube.com/watch?v=CfPWwWhEfJo"
     },
     {
         "year": 2001,
         "narrator": "Sharon Stone",
         "orchestra": "Orchestra of St. Luke's",
         "conductor": "James Levine",
-        "notes": "as part of A Classic Tale: Music for Our Children (289 471 171–72, 2001)"
+        "notes": "as part of A Classic Tale: Music for Our Children (289 471 171–72, 2001)",
+        "youtube": "https://www.youtube.com/watch?v=JHct5OFxV6o"
     },
     {
         "year": 2001,
@@ -482,17 +536,21 @@
     },
     {
         "year": 2003,
-        "narrator": "Antonio Banderas, Sophia Loren",
+        "narrator": ["Antonio Banderas",
+                      "Sophia Loren"],
         "orchestra": "Russian National Orchestra",
         "conductor": "Kent Nagano",
         "notes": "In Spanish"
     },
     {
         "year": 2003,
-        "narrator": "Mikhail Gorbachev, Bill Clinton, Sophia Loren",
+        "narrator": ["Mikhail Gorbachev", 
+                     "Bill Clinton",
+                     "Sophia Loren"],
         "orchestra": "Russian National Orchestra",
         "conductor": "Kent Nagano",
-        "notes": "Released as Wolf Tracks and Peter and the Wolf. Loren narrated Peter and the Wolf, Clinton narrated Wolf Tracks (composed by Jean-Pascal Beintus with text by Walt Kraemer), and Gorbachev narrated the Introduction, Intermezzo, and Epilogue. The album won the Grammy Award for Best Spoken Word Album for Children."
+        "notes": "Released as Wolf Tracks and Peter and the Wolf. Loren narrated Peter and the Wolf, Clinton narrated Wolf Tracks (composed by Jean-Pascal Beintus with text by Walt Kraemer), and Gorbachev narrated the Introduction, Intermezzo, and Epilogue. The album won the Grammy Award for Best Spoken Word Album for Children.",
+        "youtube": "https://www.youtube.com/watch?v=T_CXrVsRlQM"
     },
     {
         "year": 2004,
@@ -522,7 +580,8 @@
         "year": 2008,
         "narrator": "Jacqueline du Pré",
         "orchestra": "English Chamber Orchestra",
-        "conductor": "Daniel Barenboim"
+        "conductor": "Daniel Barenboim",
+        "youtube": "https://www.youtube.com/watch?v=3BgxGW-YUtw"
     },
     {
         "year": 2011,
@@ -560,13 +619,15 @@
         "narrator": "Miriam Margolyes",
         "orchestra": "Adelaide Symphony Orchestra",
         "conductor": "Nicholas Carter",
-        "notes": "With Britten's The Young Person's Guide to the Orchestra and Borodin's \"Polovtsian Dances\""
+        "notes": "With Britten's The Young Person's Guide to the Orchestra and Borodin's \"Polovtsian Dances\"",
+        "youtube": "https://www.youtube.com/watch?v=5PLZuXGcoko"
     },
     {
         "year": 2017,
         "narrator": "Alexander Armstrong",
         "orchestra": "Liverpool Philharmonic Orchestra",
-        "conductor": "Vasily Petrenko"
+        "conductor": "Vasily Petrenko",
+        "youtube": "https://www.youtube.com/watch?v=6fBjh42PQdk"
     },
     {
         "year": 2018,
