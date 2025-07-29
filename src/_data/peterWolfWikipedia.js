@@ -1,63 +1,72 @@
 import fetch from '@11ty/eleventy-fetch';
+import { readFile } from 'fs/promises';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 async function getWikipediaData(searchTerm) {
-  if (!searchTerm) return null;
+  // Skip empty search terms
+  if (!searchTerm || searchTerm.trim() === '') {
+    return null;
+  }
+
+  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(searchTerm)}`;
   
   try {
-    const cleanedTerm = searchTerm.replace(/"/g, ''); // Remove quotes
-    const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanedTerm)}`;
-    
-    const summary = await fetch(wikipediaUrl, {
-      duration: '1d', // Cache for 1 day
+    let data = await fetch(url, {
+      duration: '1d',
       type: 'json'
     });
     
     return {
-      extract_html: summary.extract_html || '',
-      thumbnail: summary.thumbnail || null,
-      content_urls: summary.content_urls || null
+      title: data.title,
+      extract: data.extract,
+      thumbnail: data.thumbnail?.source,
+      url: data.content_urls?.desktop?.page
     };
   } catch (error) {
-    console.warn(`Could not fetch Wikipedia data for ${searchTerm}:`, error.message);
-    return {
-      extract_html: '',
-      thumbnail: null,
-      content_urls: null
-    };
+    console.warn(`Failed to fetch Wikipedia data for "${searchTerm}":`, error.message);
+    return null;
   }
 }
 
 // Helper function to handle arrays and strings
 function normalizeToArray(value) {
-  if (!value) return [];
-  if (Array.isArray(value)) return value;
-  return [value];
+  if (Array.isArray(value)) {
+    return value;
+  }
+  return value ? [value] : [];
 }
 
 export default async function() {
-  const peterWolfData = await import('./peterWolf.json', { with: { type: 'json' } });
-  const recordings = peterWolfData.default;
+  // Read the JSON file using fs/promises instead of import
+  const jsonPath = join(__dirname, 'peterWolf.json');
+  const jsonContent = await readFile(jsonPath, 'utf-8');
+  const recordings = JSON.parse(jsonContent);
   
   const wikipediaData = [];
   
   for (const recording of recordings) {
-    // Normalize arrays for narrator
+    // Normalize arrays for narrator and orchestra
     const narrators = normalizeToArray(recording.narrator);
+    const orchestras = normalizeToArray(recording.orchestra);
     
     // Fetch Wikipedia data for each narrator, orchestra, and conductor
     const narratorPromises = narrators.map(narrator => getWikipediaData(narrator));
     const narratorWikis = await Promise.all(narratorPromises);
     
-    const [orchestraWiki, conductorWiki] = await Promise.all([
-      getWikipediaData(recording.orchestra),
-      getWikipediaData(recording.conductor)
-    ]);
+    const orchestraPromises = orchestras.map(orchestra => getWikipediaData(orchestra));
+    const orchestraWikis = await Promise.all(orchestraPromises);
+    
+    const conductorWiki = await getWikipediaData(recording.conductor);
     
     wikipediaData.push({
       ...recording,
-      narratorWikipedia: narratorWikis, // Array of Wikipedia data for each narrator
-      orchestraWikipedia: orchestraWiki,
-      conductorWikipedia: conductorWiki
+      narratorWikis: narratorWikis.filter(wiki => wiki !== null),
+      orchestraWikis: orchestraWikis.filter(wiki => wiki !== null),
+      conductorWiki
     });
   }
   
