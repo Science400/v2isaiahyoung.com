@@ -19,9 +19,9 @@ permalink: '/peter-wolf/index.html'
     </thead>
     <tbody>
       {% for recording in peterWolfWikipedia %}
-      <tr class="clickable-row" data-href="/peter-wolf/{{ recording.year }}-{{ recording.narrator | slugify }}/" tabindex="0" role="button" aria-label="View {{ recording.narrator }} recording from {{ recording.year }}">
+      <tr class="clickable-row" data-href="/peter-wolf/{{ recording.year }}-{{ (recording.narrator | join('-') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) | slugify }}/" tabindex="0" role="button" aria-label="View {{ (recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) }} recording from {{ recording.year }}">
         <td>{{ recording.year }}</td>
-        <td>{{ recording.narrator }}</td>
+        <td>{{ recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator }}</td>
         <td>{{ recording.orchestra }}</td>
         <td>{{ recording.conductor }}</td>
         <td>{{ recording.notes or '' }}</td>
@@ -35,6 +35,13 @@ permalink: '/peter-wolf/index.html'
     </tbody>
   </table>
   <p>Table data from <a href="https://en.wikipedia.org/wiki/Peter_and_the_Wolf">Wikipedia</a> as of 2025-07-27.</p>
+</div>
+
+<div class="stats-section">
+  <h2>Recording Statistics</h2>
+  <div class="chart-container">
+    <canvas id="recordingsChart" width="800" height="400"></canvas>
+  </div>
 </div>
 
 {%- css "inline" -%}
@@ -51,8 +58,23 @@ permalink: '/peter-wolf/index.html'
     outline: 2px solid var(--color-primary, #0066cc);
     outline-offset: -2px;
   }
+  
+  .stats-section {
+    margin: 3rem 0;
+  }
+  
+  .chart-container {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  
+  #recordingsChart {
+    max-width: 100%;
+    height: auto;
+  }
 {%- endcss -%}
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const clickableRows = document.querySelectorAll('.clickable-row');
@@ -71,6 +93,85 @@ document.addEventListener('DOMContentLoaded', function() {
         this.click();
       }
     });
+  });
+
+  // Prepare data for histogram
+  const recordings = {{ peterWolf | dump | safe }};
+  const yearCounts = {};
+  
+  // Count recordings per year (only for entries with valid years)
+  recordings.forEach(recording => {
+    const year = recording.year;
+    if (year && !isNaN(year)) {
+      yearCounts[year] = (yearCounts[year] || 0) + 1;
+    }
+  });
+  
+  // Get the range of years and fill in gaps
+  const recordedYears = Object.keys(yearCounts).map(Number);
+  const minYear = Math.min(...recordedYears);
+  const maxYear = Math.max(...recordedYears);
+  
+  const allYears = [];
+  const allCounts = [];
+  
+  for (let year = minYear; year <= maxYear; year++) {
+    allYears.push(year);
+    allCounts.push(yearCounts[year] || 0);
+  }
+  
+  // Create the chart
+  const ctx = document.getElementById('recordingsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: allYears,
+      datasets: [{
+        label: 'Number of Recordings',
+        data: allCounts,
+        backgroundColor: 'rgba(0, 102, 204, 0.6)',
+        borderColor: 'rgba(0, 102, 204, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            stepSize: 1
+          },
+          title: {
+            display: true,
+            text: 'Number of Recordings'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Year'
+          },
+          ticks: {
+            maxTicksLimit: 20,
+            callback: function(value, index) {
+              const year = this.getLabelForValue(value);
+              return year % 5 === 0 ? year : '';
+            }
+          }
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: 'Peter and the Wolf Recordings by Year (1939-2021)'
+        },
+        legend: {
+          display: false
+        }
+      }
+    }
   });
 });
 </script>
