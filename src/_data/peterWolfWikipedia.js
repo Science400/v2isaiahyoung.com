@@ -8,7 +8,7 @@ async function getWikipediaData(searchTerm) {
     const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanedTerm)}`;
     
     const summary = await fetch(wikipediaUrl, {
-      duration: '1m', // Cache for 1 month
+      duration: '4w', // Cache for 1 month
       type: 'json'
     });
     
