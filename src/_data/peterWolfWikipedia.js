@@ -3,6 +3,13 @@ import fetch from '@11ty/eleventy-fetch';
 async function getWikipediaData(searchTerm) {
   if (!searchTerm) return null;
   
+  const isProduction = (process.env.ELEVENTY_ENV === 'production' || process.env.NODE_ENV === 'production');
+
+  // Skip network requests in development to speed up builds
+  if (!isProduction) {
+    return null;
+  }
+
   try {
     const cleanedTerm = searchTerm.replace(/"/g, ''); // Remove quotes
     const wikipediaUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(cleanedTerm)}`;
