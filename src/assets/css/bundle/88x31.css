@@ -1,0 +1,117 @@
+#button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  grid-gap: 10px;
+  justify-content: space-between;
+  image-rendering: pixelated;
+}
+
+#button-grid .btn-item img {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  image-rendering: pixelated;
+  border-radius: 0px;
+  /* border: red 1px solid; */
+}
+
+.button-detail {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  display: block;
+  /* background: #fff; */
+}
+
+#detail-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+}
+
+#detail-image img {
+  image-rendering: pixelated;
+}
+
+@media (max-width: 640px) {
+  #detail-inner {
+    flex-direction: column;
+  }
+}
+
+#detail-toggle {
+  background-color: rebeccapurple;
+  width: 100px;
+}
+
+.detail-panel {
+  /* Span all columns */
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  background-color: var(--color-bg-accent);
+  border: 1px solid var(--color-primary-highlight);
+  border-radius: 8px;
+}
+
+.details-panel.open {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* Styles moved from JS: layout for the two-column detail panel */
+.detail-left,
+.detail-right {
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+}
+
+.detail-left {
+  justify-content: flex-end; /* push content toward center */
+  padding-right: 1rem;
+  overflow: visible;
+}
+
+.detail-right {
+  justify-content: space-between; /* push content toward center */
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-text-accent); /* vertical separator */
+  padding-right: 1rem;
+}
+
+.detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-close-row {
+  align-self: flex-end;
+}
+.detail-prev-next-row {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Cloned button styling (was set inline) */
+
+button.big-button img {
+  width: 176px; /* double size of 88px button */
+  height: 62px; /* double size of 31px button */
+  /* box-sizing: border-box;
+     overflow: hidden; */
+  image-rendering: pixelated;
+}

@@ -1,0 +1,111 @@
+[
+    {
+        "name": "Built with Eleventy",
+        "link": "https://www.11ty.dev/",
+        "source": "https://chrisburnell.com/note/eleventy-animated-88x31/",
+        "sourceName": "Chris Burnell",
+        "imgsrc": "/assets/images/88x31/built-with-eleventy.webp"
+    },
+    {
+        "name": "Made with 11ty",
+        "link": "https://www.11ty.dev/",
+        "source": "https://localghost.dev/ ",
+        "sourceName": "localghost",
+        "imgsrc": "/assets/images/88x31/made-with-11ty.webp"
+    },
+    {
+        "name": "Goldfish",
+        "source": "https://sunpop.neocities.org/junk/pixels",
+        "sourceName": "Sun",
+        "imgsrc": "/assets/images/88x31/goldfish.webp"
+    },
+    {
+        "name": "Dither Me This",
+        "link": "https://doodad.dev/dither-me-this/",
+        "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/92",
+        "sourceName": "CooperationIsKey",
+        "imgsrc": "/assets/images/88x31/ditherMeThis.webp"
+    },
+    {
+        "name": "GIMP",
+        "link": "https://www.gimp.org/",
+        "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/92",
+        "sourceName": "CooperationIsKey",
+        "imgsrc": "/assets/images/88x31/gimp.webp"
+    },
+    {
+        "name": "Homestar Runner",
+        "link": "https://www.homestarrunner.com/",
+        "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/92",
+        "sourceName": "CooperationIsKey",
+        "imgsrc": "/assets/images/88x31/homestarRunner.webp"
+    },
+    {
+        "name": "I Heart Buttons",
+        "source": "https://sunpop.neocities.org/junk/pixels",
+        "sourceName": "Sun",
+        "imgsrc": "/assets/images/88x31/iheartbuttons.webp"
+    },
+    {
+        "name": "Little Pixel Library",
+        "link": "https://hillhouse.neocities.org/cliques/library/",
+        "source": "https://hillhouse.neocities.org/cliques/library/",
+        "sourceName": "Little Pixel Library",
+        "imgsrc": "/assets/images/88x31/library88x31.webp"
+    },
+    {
+        "name": "Mastodon",
+        "link": "https://mstdn.plus/@science400",
+        "source": "https://rknight.me/",
+        "sourceName": "Robb Knight",
+        "imgsrc": "/assets/images/88x31/mastodon.webp"
+    },
+    {
+        "name": "PBS Kids",
+        "link": "https://pbskids.org/",
+        "source": "https://sunpop.neocities.org/junk/pixels",
+        "sourceName": "Sun",
+        "imgsrc": "/assets/images/88x31/pbskids.webp"
+    },
+    {
+        "name": "The People Pledge",
+        "link": "https://people.pledge.party/",
+        "source": "https://people.pledge.party/",
+        "sourceName": "The People Pledge",
+        "imgsrc": "/assets/images/88x31/people_pledge_badge_party_pink_cream_88x31.webp"
+    },
+    {
+        "name": "ribo.zone",
+        "link": "https://ribo.zone/",
+        "source": "https://ribo.zone/",
+        "sourceName": "ribo.zone",
+        "imgsrc": "/assets/images/88x31/ribo.zone.webp"
+    },
+    {
+        "name": "Robb Knight",
+        "link": "https://rknight.me/",
+        "source": "https://rknight.me/",
+        "sourceName": "Robb Knight",
+        "imgsrc": "/assets/images/88x31/robbknight.webp"
+    },
+    {
+        "name": "Snooty the manatee",
+        "link": "https://en.wikipedia.org/wiki/Snooty",
+        "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/101",
+        "sourceName": "Manatee",
+        "imgsrc": "/assets/images/88x31/snootybutton.webp"
+    },
+    {
+        "name": "Tiger",
+        "source": "https://sunpop.neocities.org/junk/pixels",
+        "sourceName": "Sun",
+        "imgsrc": "/assets/images/88x31/tiger.webp"
+    },
+    {
+        "name": "VLC Media Player",
+        "link": "https://www.videolan.org/vlc/index.html",
+        "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/92",
+        "sourceName": "CooperationIsKey",
+        "imgsrc": "/assets/images/88x31/VLCplayer.webp"
+    }
+]

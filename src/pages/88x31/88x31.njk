@@ -1,0 +1,49 @@
+---
+title: 88x31 Buttons
+description: 'Here are my buttons. They are mine. Hopefully fancier.'
+layout: page
+permalink: '/88x31/index.html'
+---
+
+{% block head %}
+  <link rel="stylesheet" href="/assets/css/bundle/88x31.css">
+{% endblock %}
+
+<article class="wrapper">
+  <div id="button-grid">
+    {% for button in buttons88x31 %}
+      <button type="button" 
+              class="button-88x31 btn-item"
+              data-id="{{ loop.index }}"
+              data-name="{{ button.name }}"
+              data-link="{{ button.link }}"
+              data-imgsrc="{{ button.imgsrc }}"
+              data-sourceName="{{ button.sourceName }}"
+              data-source="{{ button.source }}">
+        <img src="{{ button.imgsrc }}" alt="{{ button.name }}" width="88" height="31">
+      </button>
+    {% endfor %}
+  </div>
+
+  <!-- details panel (hidden by default; populated by JS) -->
+  <aside id="button-detail" hidden aria-hidden="true">
+    <button id="detail-close" aria-label="Close details">&times;</button>
+    <div id="detail-inner">
+      <div id="detail-image">
+       <img src="" alt="" width="176" height="62">
+      </div>
+      <div id="detail-meta">
+        {# <h3 class="detail-title"><a href="" class="detail-link"></a></h3> #}
+        {# <a class="detail-title detail-link" href=""></a>
+        <a class="detail-source" href="" >Source: <span class="detail-sourceName"></span></a> #}
+        <p id="detail-title" hidden></p>
+        <a id="detail-title-link" href="" hidden></a>
+        <p id="detail-source" hidden>source</p>
+        <a id="detail-source-link" href="" hidden></a>
+      </div>
+    </div>
+  </aside>
+
+</article>
+
+<script src="/assets/scripts/components/88x31fancy.js" defer></script>
