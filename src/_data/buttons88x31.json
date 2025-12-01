@@ -107,5 +107,44 @@
         "source": "https://discourse.32bit.cafe/t/share-your-88x31s/280/92",
         "sourceName": "CooperationIsKey",
         "imgsrc": "/assets/images/88x31/VLCplayer.webp"
+    },  
+    {
+        "name": "Made with VS Code",
+        "link": "https://code.visualstudio.com/",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/vsbutton.webp"
+    },
+    {
+        "name": "uBlock Origin Now",
+        "link": "https://github.com/gorhill/uBlock",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/ublock_now.webp"
+    },
+    {
+        "name": "Right to Repair",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/righttorepair.webp"
+    },
+    {
+        "name": "Responsive Site",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/responsivesite.webp"
+    },
+    {
+        "name": "Internet Archive",
+        "link": "https://archive.org/",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/ia.webp"
+    },
+    {
+        "name": "Made for Dark Mode",
+        "source": "https://venus-territory.neocities.org/",
+        "sourceName": "Venus Territory",
+        "imgsrc": "/assets/images/88x31/dark-mode.webp"
     }
 ]
