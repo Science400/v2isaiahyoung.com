@@ -125,6 +125,19 @@ document.addEventListener('DOMContentLoaded', () => {
     linkElement.textContent = clickedButton.dataset.name || '';
     infoCol.appendChild(linkElement);
 
+    const sourceElement = clickedButton.dataset.source
+      ? document.createElement('a')
+      : document.createElement('div');
+    sourceElement.className = 'detail-source';
+    if (clickedButton.dataset.source) {
+      sourceElement.href = clickedButton.dataset.source;
+      sourceElement.target = '_blank';
+      sourceElement.rel = 'noopener noreferrer';
+    }
+    sourceElement.textContent = clickedButton.dataset.sourcename;
+    infoCol.appendChild(sourceElement);
+    
+
     const closeRow = document.createElement('div');
     closeRow.className = 'detail-close-row';
     
