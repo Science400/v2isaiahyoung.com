@@ -1,0 +1,14 @@
+---
+title: "Pinball Hall of Fame"
+permalink: /museum/coins/pinballHallOfFame/index.html
+description: "The Welcome to Fabulous Las Vegas sign is an icon of the city."
+layout: page
+tags: pressedPenny
+imageFilename: "pinballHallOfFame"
+---
+
+{% image "./src/assets/images/museum/" + imageFilename + ".png", "A pressed penny depicting a pinball bumper that reads 100 points when lit.", "Pinball bumper" %}
+
+I went to the [Las Vegas](https://en.wikipedia.org/wiki/Las_Vegas) in December 2025, and one of my favorite parts was visiting the [Pinball Hall of Fame](https://pinballmuseum.org/).
+
+[Penny Collector Machine](http://locations.pennycollector.com/Details.aspx?location=200907)
