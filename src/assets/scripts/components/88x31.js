@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('button-grid');
   let currentDetailPanel = null;
+  let currentClickedButton = null;
   if (!grid) return;
 
   function getGridStructure() {
@@ -75,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       console.log('No existing detail panel.');
     }
+
+    // Store reference to current button for keyboard navigation
+    currentClickedButton = clickedButton;
 
     // find the row the clicked button is on.
     // console.log('Grid Structure: ', getGridStructure());
@@ -153,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (currentDetailPanel) {
         currentDetailPanel.remove();
         currentDetailPanel = null;
+        currentClickedButton = null;
       }
     });
     const prevButton = document.createElement('button');
@@ -166,6 +171,24 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.setAttribute('aria-label', 'Next item');
     nextButton.innerHTML = '&#8594;';
     prevNextRow.appendChild(nextButton);
+
+    prevButton.addEventListener('click', () => {
+      const currentId = Number(clickedButton.dataset.id);
+      const prevId = currentId - 1;
+      const prevItem = grid.querySelector(`.btn-item[data-id="${prevId}"]`);
+      if (prevItem) {
+        prevItem.click();
+      }
+    });
+
+    nextButton.addEventListener('click', () => {
+      const currentId = Number(clickedButton.dataset.id);
+      const nextId = currentId + 1;
+      const nextItem = grid.querySelector(`.btn-item[data-id="${nextId}"]`);
+      if (nextItem) {
+        nextItem.click();
+      }
+    });
 
     controlsCol.appendChild(closeRow);
     controlsCol.appendChild(prevNextRow);
@@ -196,6 +219,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!currentDetailPanel || !currentClickedButton) return;
+
+    if (e.key === 'Escape') {
+      if (currentDetailPanel) {
+        currentDetailPanel.remove();
+        currentDetailPanel = null;
+        currentClickedButton = null;
+      }
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const currentId = Number(currentClickedButton.dataset.id);
+      const prevId = currentId - 1;
+      const prevItem = grid.querySelector(`.btn-item[data-id="${prevId}"]`);
+      if (prevItem) {
+        prevItem.click();
+      }
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const currentId = Number(currentClickedButton.dataset.id);
+      const nextId = currentId + 1;
+      const nextItem = grid.querySelector(`.btn-item[data-id="${nextId}"]`);
+      if (nextItem) {
+        nextItem.click();
+      }
+    }
+  });
 
 });
 
