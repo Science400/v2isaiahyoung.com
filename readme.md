@@ -76,6 +76,61 @@ Minify JS, CSS and HTML.
 npm run build
 ```
 
+### Accessibility testing
+
+Builds the site, serves it, and runs [pa11y-ci](https://github.com/pa11y/pa11y-ci)
+against the pages listed in `meta.tests.pa11y.customPaths` at WCAG 2 AA.
+
+```
+npm run test:a11y
+```
+
+This pulls in Puppeteer, which downloads its own copy of Chrome (~280MB) into
+`~/.cache/puppeteer`. That is a local-only dev tool — `.puppeteerrc.cjs` skips
+the download on Cloudflare Pages (where `CF_PAGES` is set), because a failed
+browser download exits `npm install` non-zero and would take the deploy with it.
+
+## Deployment
+
+Deployed on **Cloudflare Pages**, which builds from this repo and publishes `dist/`.
+
+Cloudflare ignores `netlify.toml`, so host config lives in files emitted into the
+build output instead:
+
+- `src/common/_headers.njk` → `_headers` (security headers + cache policy)
+- `src/common/_redirects.njk` → `_redirects` (from `redirectFrom` front matter)
+- `.node-version` pins Node 24 (Eleventy Excellent 4.8 requires >= 24; Cloudflare
+  defaults to 22). This file takes priority over a `NODE_VERSION` variable.
+
+The canonical production origin is set in `src/_data/meta.js`. It is **not** read
+from `process.env.URL` alone — that is a Netlify variable, and relying on it
+silently published `http://localhost:8080` canonical tags, `og:url` values, sitemap
+entries and feed links.
+
+## LCARS template
+
+The Captain's Log pages (`layout: lcars`) use the **LCARS V26 "Classic"** theme from
+[TheLCARS.com](https://www.thelcars.com), created by Jim Robertus. These files come
+from that template and are not original work:
+
+- `src/_layouts/lcars.njk` (V26 `classic.html`, restructured for Eleventy)
+- `src/assets/css/components/lcars-classic.css` (font `url()` paths rewritten)
+- `src/assets/scripts/bundle/lcars.js` (handlers exposed on `window` for esbuild)
+- `src/assets/fonts/lcars/Antonio-*.woff2?`
+
+Used under the [TheLCARS.com EULA](https://www.thelcars.com/license/): free for
+personal, non-commercial use, with required attribution. The credit in the
+`lcars.njk` footer must not be removed. The template may not be sold or resold.
+
+The LCARS data cascade animates its text colour via CSS keyframes to get the
+flickering readout effect. A static contrast checker samples one frame and reports
+a false 1:1 failure for cells caught mid-cycle, so `src/garden/garden.11tydata.js`
+scopes a pa11y contrast exemption to `layout: lcars` pages only — contrast is still
+enforced everywhere else on the site.
+
+STAR TREK and related marks are trademarks of CBS Studios Inc. TheLCARS.com is not
+affiliated with CBS Studios Inc. LCARS was designed by graphic artist Michael Okuda.
+
 ## Built with Eleventy Excellent
 
 [Sites that are based on / built with Eleventy Excellent. ](https://eleventy-excellent.netlify.app/built-with/)

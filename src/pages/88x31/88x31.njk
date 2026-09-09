@@ -30,7 +30,9 @@ permalink: '/88x31/index.html'
     <button id="detail-close" aria-label="Close details">&times;</button>
     <div id="detail-inner">
       <div id="detail-image">
-       <img src="" alt="" width="176" height="62">
+       {# No src until JS populates it: src="" makes the browser re-request the
+          current page URL, costing a wasted round trip on every load. #}
+       <img alt="" width="176" height="62">
       </div>
       <div id="detail-meta">
         {# <h3 class="detail-title"><a href="" class="detail-link"></a></h3> #}
