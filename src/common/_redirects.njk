@@ -3,12 +3,15 @@ permalink: /_redirects
 eleventyExcludeFromCollections: true
 excludeFromSitemap: true
 ---
-
-{% for page in collections.all %}
-  {% if page.url and page.data.redirectFrom %}
-    {% for oldUrl in page.data.redirectFrom %}
-      {{ oldUrl }}
-      {{ page.url }}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
+{#-
+  Cloudflare Pages redirects. One rule per line: "<from> <to> <status>".
+  Sourced from `redirectFrom` in page front matter.
+  https://developers.cloudflare.com/pages/configuration/redirects/
+-#}
+{%- for page in collections.all -%}
+{%- if page.url and page.data.redirectFrom -%}
+{%- for oldUrl in page.data.redirectFrom %}
+{{ oldUrl }} {{ page.url }} 301
+{%- endfor -%}
+{%- endif -%}
+{%- endfor %}

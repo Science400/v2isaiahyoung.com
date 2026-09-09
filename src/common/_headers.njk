@@ -1,0 +1,39 @@
+---
+permalink: /_headers
+eleventyExcludeFromCollections: true
+excludeFromSitemap: true
+---
+{#-
+  Cloudflare Pages custom response headers.
+  Parsed by Cloudflare at deploy time; the file itself is never served.
+  Syntax: a URL pattern on its own line, followed by indented "Header: value" lines.
+  Limits: 100 rules max, 2000 characters per line.
+  https://developers.cloudflare.com/pages/configuration/headers/
+-#}
+/*
+  Content-Security-Policy: upgrade-insecure-requests;
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()
+
+# Content-hashed filenames: safe to cache forever.
+/bundle/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Width-suffixed but not content-hashed: long cache, not immutable.
+/assets/images/*
+  Cache-Control: public, max-age=31536000
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000
+
+/assets/css/components/*
+  Cache-Control: public, max-age=604800
+
+/assets/scripts/components/*
+  Cache-Control: public, max-age=604800

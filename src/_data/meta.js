@@ -1,4 +1,14 @@
-export const url = process.env.URL || 'http://localhost:8080';
+// Canonical production origin. Used for canonical tags, og:url, sitemap.xml,
+// the RSS/JSON feeds and llms.txt — so it must be the real domain in production.
+// NOTE: `process.env.URL` is a Netlify variable and is NOT set by Cloudflare
+// Pages; relying on it alone silently published localhost URLs. Cloudflare's
+// own CF_PAGES_URL is the per-deployment *.pages.dev address, not the custom
+// domain, so it is deliberately not used here.
+const productionUrl = 'https://isaiahyoung.com';
+
+export const url =
+  process.env.URL ||
+  (process.env.ELEVENTY_ENV === 'production' ? productionUrl : 'http://localhost:8080');
 export const siteName = 'Isaiah\'s Notes';
 export const siteDescription = 'My little corner of the web.';
 export const siteType = 'Person'; // schema
@@ -73,7 +83,7 @@ export const greenweb = {
   // this goes into src/common/greenweb.njk
   providers: {
     // if you want to add more than one, edit the array directly.
-    domain: 'netlify.com',
+    domain: 'cloudflare.com',
     service: 'cdn'
   },
   credentials: {
