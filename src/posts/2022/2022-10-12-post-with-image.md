@@ -33,7 +33,7 @@ The class names are passed in the outer container, the `<picture>` or `<figure>`
 {% raw %}
 
 ```jinja2
-{% image "path to image", "alt text", "caption text", "eager", "class names", "(min-width:30em) 50vw, 100vw", [200, 400] %}
+{% image "path to image", "alt text", "caption text", "eager", "container class", "image class", [200, 400], "(min-width:30em) 50vw, 100vw" %}
 {% image "path to image", "alt text", null, "eager" %}
 ```
 
@@ -56,12 +56,12 @@ The class names are passed in the outer container, the `<picture>` or `<figure>`
 {% raw %}
 
 ```jinja2
-{% image "./src/assets/images/gallery/asturias-3.jpg", "A traditional Asturian village with it's raised granaries, surrounded by lush green hills and mountains", null, "lazy", "class-that-does-nothing", "(min-width:30em) 50vw, 100vw", [200, 400] %}
+{% image "./src/assets/images/gallery/asturias-3.jpg", "A traditional Asturian village with it's raised granaries, surrounded by lush green hills and mountains", null, "lazy", "class-that-does-nothing", null, [200, 400], "(min-width:30em) 50vw, 100vw" %}
 ```
 
 {% endraw %}
 
-{% image "./src/assets/images/gallery/asturias-3.jpg", "A traditional Asturian village with it's raised granaries, surrounded by lush green hills and mountains", null, "lazy", "class-that-does-nothing", "(min-width:30em) 50vw, 100vw", [200, 400] %}
+{% image "./src/assets/images/gallery/asturias-3.jpg", "A traditional Asturian village with it's raised granaries, surrounded by lush green hills and mountains", null, "lazy", "class-that-does-nothing", null, [200, 400], "(min-width:30em) 50vw, 100vw" %}
 
 ## Markdown syntax
 

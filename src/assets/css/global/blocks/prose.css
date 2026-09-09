@@ -5,7 +5,7 @@
   --wrapper-width: 64rem;
 }
 
-.prose :where(pre, pre + *, figure, figure + *) {
+.prose :where(pre, pre + *, figure, figure + *, picture, picture + *) {
   --flow-space: var(--space-m-l);
 }
 
@@ -21,7 +21,7 @@
   --flow-space: var(--space-xl);
 }
 
-:where(.prose :is(h2 + *, h3 + *, h4 + *):not(figure)) {
+:where(.prose :is(h2 + *, h3 + *, h4 + *):not(figure):not(picture)) {
   --flow-space: var(--space-m);
 }
 
