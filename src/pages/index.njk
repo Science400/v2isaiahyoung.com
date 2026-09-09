@@ -1,10 +1,10 @@
 ---
 layout: base
 permalink: /index.html
-title: 'Eleventy Excellent'
+title: 'Isaiah Young'
 description: 'Eleventy starter using modern CSS, fluid type, fluid spacing, flexible layout and progressive enhancement.'
 blog:
-  title: 'Blog'
+  title: 'Captains Logs'
   intro: "I'm showing the last 4 blog posts, but there might be more!"
 ---
 
@@ -19,21 +19,13 @@ blog:
 
   <article class="full | region">
     <div class="wrapper flow prose">
-      <h2 id="an-eleventy-starter">An Eleventy starter</h2>
-      <p>
-        Built around a CSS workflow that emphasizes guiding browser styling rather than micromanaging it. It
-        incorporates progressive enhancement, fluid type and spacing, and utilizes modern CSS features for
-        layout. The goal is to develop frontends that provide a great experience across all devices,
-        connection speeds, and usage contexts.
-      </p>
-      <p>
-        <strong>This is version 3.</strong> I keep a
-        <a href="https://github.com/madrilene/eleventy-excellent/tree/v1">branch of v1</a> and
-        <a href="https://github.com/madrilene/eleventy-excellent/tree/v2">v2</a> because I have changed a lot
-        of things. I have tried to <a href="/get-started/#docs-lol">document</a> most features and
-        methodologies.
-      </p>
-      <p><strong>Have fun</strong> and let me know if you find any issues or have ideas for improvements!</p>
+      <p>Welcome to my little corner of the internet. I don't know what I'm doing here, but I'm learning. And that's the point. Please check out some of the things I've worked on.
+      <h2 id="an-eleventy-starter">Featured Pages</h2>
+      <ul>
+        <li><a href="/88x31/index.html">88x31 Buttons</a></li>
+        <li><a href="/peter-wolf/index.html">Peter and the Wolf Recordings</a></li>
+        <li><a href="/museum/coins/pressedPennies/index.html">Pressed Pennies Collection</a></li>
+      </ul>
     </div>
   </article>
 
@@ -49,7 +41,7 @@ blog:
       <div class="feature |  region">
         <custom-masonry layout="50-50">
           <!-- loop posts -->
-          {% set itemList = collections.allPosts %}
+          {% set itemList = collections.captainsLogs | reverse %}
 					{% asyncEach item in itemList.slice(0, 4) %}
 						{% set definedDate = item.date %}
 						{% include "partials/card-blog.njk" %}
