@@ -103,6 +103,21 @@ export const robots = {
   // emit /llms.txt at build time.
   generateLlmsTxt: true
 };
+export const tests = {
+  pa11y: {
+    // keep customPaths empty if you want to test all pages
+    customPaths: [
+      '/',
+      '/blog/',
+      '/garden/',
+      '/garden/2025-12-28/', // LCARS layout
+      '/museum/',
+      '/88x31/',
+      '/peter-wolf/'
+    ],
+    globalIgnore: []
+  }
+};
 export const viewRepo = {
   // this is for the view/edit on github link. The value in the package.json will be pulled in.
   allow: true,

@@ -10,14 +10,23 @@ permalink: '/garden/index.html'
   <div style="display: flex; justify-content: space-between; align-items: center;">
     <p>There are {{ collections.gardenPosts.length }} garden posts.</p>
     <div>
-      <select id="gardenType" class="garden-type-filter" style="margin-right: 10px;">
+      <select
+        id="gardenType"
+        class="garden-type-filter"
+        aria-label="Filter garden posts by type"
+        style="margin-right: 10px;"
+      >
         <option default value="all">All</option>
         <option value="til">Today I Learned</option>
         <option value="essay">Essay</option>
         <option value="captainsLog">Captain's Log</option>
         <option value="showAndTell">Show and Tell</option>
       </select>
-      <select id="gardenStatus" class="garden-status-filter">
+      <select
+        id="gardenStatus"
+        class="garden-status-filter"
+        aria-label="Filter garden posts by growth status"
+      >
         <option default value="all">All</option>
         <option value="seedling">Seedling</option>
         <option value="budding">Budding</option>
