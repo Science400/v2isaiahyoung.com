@@ -1,0 +1,13 @@
+<!-- Prefetches likely next pages on link hover / interaction. Progressive enhancement:
+     supported in chromium browsers, everyone else ignores the script block.
+     https://developer.chrome.com/docs/web-platform/prerender-pages -->
+<script type="speculationrules">
+  {
+    "prefetch": [
+      {
+        "where": {"href_matches": "/*"},
+        "eagerness": "moderate"
+      }
+    ]
+  }
+</script>

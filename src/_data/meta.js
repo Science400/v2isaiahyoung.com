@@ -93,6 +93,16 @@ export const greenweb = {
     url: ''
   }
 };
+export const robots = {
+  // AI bot user agents live in `src/common/robots.njk` (sourced from
+  // https://github.com/ai-robots-txt/ai.robots.txt).
+  // Training / AI-search scrapers
+  allowAiCrawlers: false,
+  // On-demand assistants and browsing agents.
+  allowAiAgents: false,
+  // emit /llms.txt at build time.
+  generateLlmsTxt: true
+};
 export const viewRepo = {
   // this is for the view/edit on github link. The value in the package.json will be pulled in.
   allow: true,

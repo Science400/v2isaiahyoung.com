@@ -1,0 +1,9 @@
+/* Animates navigations between pages in browsers that support cross document
+   view transitions, everyone else keeps instant navigation.
+   https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API */
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}

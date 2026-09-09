@@ -7,6 +7,7 @@
 
 @import 'base/variables.css';
 @import 'base/global-styles.css';
+@import 'base/view-transitions.css';
 
 @import-glob 'compositions/*.css';
 @import-glob 'blocks/*.css';
