@@ -1,13 +1,29 @@
+{#-
+  LCARS Inspired Website Template by www.TheLCARS.com, with modifications.
+  Migrated to the V26 "Classic" theme. V26 stylesheets are only compatible with
+  V26 HTML structure, so the markup below follows LCARS-26/classic.html:
+    - panels and nav are <button> (V23-B used <div>/<a>)
+    - the data cascade is column-based (.data-column > .dc-row-N)
+    - scroll-to-top is #topBtn inside .left-frame, driven by assets/lcars.js
+    - <footer> is a sibling of <main>, not nested inside it
+    - .headtrim / .baseboard close out the body
+
+  Sounds: the stock V26 template wires every button to playSoundAndRedirect().
+  This site has never shipped the LCARS audio, so decorative panels are inert
+  and navigation uses plain hrefs. To enable audio, copy the beep*.mp3 files
+  from the V26 package, add the <audio> elements, and swap the handlers back.
+-#}
 <!DOCTYPE html>
-<html>
+<html lang="{{ meta.lang }}">
 
 <head>
+	<meta charset="utf-8">
 	<title>Captain's Log - {{ title }}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="format-detection" content="date=no">
-  <link rel="stylesheet" href="{{ '/assets/css/bundle/lcars-ultra-classic.css' | url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/bundle/lcars-colors.css' | url }}">
+	{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+	<link rel="stylesheet" href="{{ '/assets/css/components/lcars-classic.css' | url }}">
 </head>
 
 {% set previousPost = collections.captainsLogs | getPreviousCollectionItem(page) %}
@@ -16,24 +32,30 @@
 <body>
 	<section class="wrap-standard" id="column-3">
 		<div class="wrap">
-			<div class="scroll-top"><a id="scroll-top" href=""><span class="hop">screen</span> top</a></div>
 			<div class="left-frame-top">
-				<div class="panel-1"><a href="/garden/index.html">G4RD3N</a></div>
-				<div class="panel-2">02<span class="hop">-262000</span></div>
+				<button type="button" class="panel-1 animation-on" onclick="location.href='/garden/'">G4RD3N</button>
+				<button type="button" class="panel-2" tabindex="-1" aria-hidden="true">02<span class="hop">-262000</span></button>
 			</div>
 			<div class="right-frame-top">
-				<div class="banner"> <a href="">LCARS</a> &#149; <span class="blink">Online</span> </div>
+				<div class="banner">LCARS &#149; <span class="blink">Online</span></div>
 				<div class="data-cascade-button-group">
-					<div class="cascade-wrapper">
-						<div class="data-cascade" id="default">
-							<div class="row-1"><div class="dc1">101</div><div class="dc2">7109</div><div class="dc3">1966</div><div class="dc44">36</div><div class="dc55">880</div><div class="dc6">11.03</div><div class="dc77">1954</div><div class="dc8">03</div><div class="dc99">6.08</div><div class="dc100">241</div><div class="dc11">309</div><div class="dc12">7.08</div><div class="dc13">1935</div><div class="dc14">12.20</div><div class="dc150">53</div><div class="dc150">1961</div><div class="dc150">2.16</div></div><div class="row-2"><div class="dc1">102</div><div class="dc2">8102</div><div class="dc3">1987</div><div class="dc44">044</div><div class="dc55">0051</div><div class="dc6">1968</div><div class="dc77">704</div><div class="dc8">10.31</div><div class="dc99">1984</div><div class="dc100">1954</div><div class="dc11">764</div><div class="dc12">1940</div><div class="dc13">9.9</div><div class="dc14">1972</div><div class="dc150">815</div><div class="dc150">4.12</div><div class="dc150">2023</div></div><div class="row-3"><div class="dc1">103</div><div class="dc2">714</div><div class="dc3">1993</div><div class="dc44">0222</div><div class="dc55">4.4</div><div class="dc6">1969</div><div class="dc77">2450</div><div class="dc8">91</div><div class="dc99">56</div><div class="dc100">21</div><div class="dc11">716</div><div class="dc12">801</div><div class="dc13">417</div><div class="dc14">602</div><div class="dc150">5618</div><div class="dc150">238</div><div class="dc150">1443</div></div><div class="row-4"><div class="dc1">104</div><div class="dc2">6104</div><div class="dc3">1995</div><div class="dc44">3.22</div><div class="dc55">1931</div><div class="dc6">0.0</div><div class="dc77">0000</div><div class="dc8">1701</div><div class="dc99">1984</div><div class="dc100">218</div><div class="dc11">908</div><div class="dc12">10</div><div class="dc13">85</div><div class="dc14">1888</div><div class="dc150">27</div><div class="dc150">2879</div><div class="dc150">213</div></div><div class="row-5"><div class="dc1">105</div><div class="dc2">08</div><div class="dc3">2001</div><div class="dc44">713</div><div class="dc55">079</div><div class="dc6">1977</div><div class="dc77">LV</div><div class="dc8">426</div><div class="dc99">105</div><div class="dc100">10</div><div class="dc11">1642</div><div class="dc12">1979</div><div class="dc13">402</div><div class="dc14">795</div><div class="dc150">361</div><div class="dc150">0852</div><div class="dc150">984</div></div><div class="row-6"><div class="dc1">106</div><div class="dc2">31</div><div class="dc3">2017</div><div class="dc44">429</div><div class="dc55">65</div><div class="dc6">871</div><div class="dc77">24</div><div class="dc8">541</div><div class="dc99">656</div><div class="dc100">M</div><div class="dc11">113</div><div class="dc12">12.6</div><div class="dc13">27</div><div class="dc14">05</div><div class="dc150">85</div><div class="dc150">12.25</div><div class="dc150">7884</div></div><div class="row-7"><div class="dc1">107</div><div class="dc2">5</div><div class="dc3">2022</div><div class="dc44">784</div><div class="dc55">3304</div><div class="dc6">42</div><div class="dc77">733</div><div class="dc8">1224</div><div class="dc99">5801</div><div class="dc100">23</div><div class="dc11">1015</div><div class="dc12">84</div><div class="dc13">36</div><div class="dc14">029</div><div class="dc150">24</div><div class="dc150">318</div><div class="dc150">12.24</div></div><div class="row-8"><div class="dc1">108</div><div class="dc2">23</div><div class="dc3">174</div><div class="dc44">91</div><div class="dc55">947</div><div class="dc6">28</div><div class="dc77">527</div><div class="dc8">04</div><div class="dc99">0469</div><div class="dc100">2200</div><div class="dc11">88</div><div class="dc12">1985</div><div class="dc13">540</div><div class="dc14">3121</div><div class="dc150">308</div><div class="dc150">9571</div><div class="dc150">404</div></div>
-						</div>
-					</div>
-					<nav id="nav-standard"> 
-						<a href="{% if previousPost %}{{ previousPost.url }}{% endif %}" id="b-one">PREV</a>
-						<a href="{% if nextPost %}{{ nextPost.url }}{% endif %}" id="b-two">NEXT</a>
-						<a href="" id="b-three">03</a>
-						<a href="" id="b-five">04</a>
+					<div class="data-cascade-wrapper" id="default" aria-hidden="true">
+						{#- Decorative greeble. V26 renders this as columns of .dc-row-N cells. -#}
+						<div class="data-column"><div class="dc-row-1">101</div><div class="dc-row-1">7109</div><div class="dc-row-2">1966</div><div class="dc-row-3">36</div><div class="dc-row-3">880</div><div class="dc-row-4">11.03</div><div class="dc-row-5">1954</div><div class="dc-row-6">03</div><div class="dc-row-7">6.08</div></div><div class="data-column"><div class="dc-row-1">241</div><div class="dc-row-1">309</div><div class="dc-row-2">7.08</div><div class="dc-row-3">1935</div><div class="dc-row-3">12.20</div><div class="dc-row-4">53</div><div class="dc-row-5">1961</div><div class="dc-row-6">2.16</div><div class="dc-row-7">102</div></div><div class="data-column"><div class="dc-row-1">8102</div><div class="dc-row-1">1987</div><div class="dc-row-2">044</div><div class="dc-row-3">0051</div><div class="dc-row-3">1968</div><div class="dc-row-4">704</div><div class="dc-row-5">10.31</div><div class="dc-row-6">1984</div><div class="dc-row-7">1954</div></div><div class="data-column"><div class="dc-row-1">764</div><div class="dc-row-1">1940</div><div class="dc-row-2">9.9</div><div class="dc-row-3">1972</div><div class="dc-row-3">815</div><div class="dc-row-4">4.12</div><div class="dc-row-5">2023</div><div class="dc-row-6">103</div><div class="dc-row-7">714</div></div><div class="data-column"><div class="dc-row-1">1993</div><div class="dc-row-1">0222</div><div class="dc-row-2">4.4</div><div class="dc-row-3">1969</div><div class="dc-row-3">2450</div><div class="dc-row-4">91</div><div class="dc-row-5">56</div><div class="dc-row-6">21</div><div class="dc-row-7">716</div></div><div class="data-column"><div class="dc-row-1">801</div><div class="dc-row-1">417</div><div class="dc-row-2">602</div><div class="dc-row-3">5618</div><div class="dc-row-3">238</div><div class="dc-row-4">1443</div><div class="dc-row-5">104</div><div class="dc-row-6">6104</div><div class="dc-row-7">1995</div></div><div class="data-column"><div class="dc-row-1">3.22</div><div class="dc-row-1">1931</div><div class="dc-row-2">0.0</div><div class="dc-row-3">0000</div><div class="dc-row-3">1701</div><div class="dc-row-4">1984</div><div class="dc-row-5">218</div><div class="dc-row-6">908</div><div class="dc-row-7">10</div></div><div class="data-column"><div class="dc-row-1">85</div><div class="dc-row-1">1888</div><div class="dc-row-2">27</div><div class="dc-row-3">2879</div><div class="dc-row-3">213</div><div class="dc-row-4">105</div><div class="dc-row-5">08</div><div class="dc-row-6">2001</div><div class="dc-row-7">713</div></div><div class="data-column"><div class="dc-row-1">079</div><div class="dc-row-1">1977</div><div class="dc-row-2">LV</div><div class="dc-row-3">426</div><div class="dc-row-3">105</div><div class="dc-row-4">10</div><div class="dc-row-5">1642</div><div class="dc-row-6">1979</div><div class="dc-row-7">402</div></div><div class="data-column"><div class="dc-row-1">795</div><div class="dc-row-1">361</div><div class="dc-row-2">0852</div><div class="dc-row-3">984</div><div class="dc-row-3">106</div><div class="dc-row-4">31</div><div class="dc-row-5">2017</div><div class="dc-row-6">429</div><div class="dc-row-7">65</div></div><div class="data-column"><div class="dc-row-1">871</div><div class="dc-row-1">24</div><div class="dc-row-2">541</div><div class="dc-row-3">656</div><div class="dc-row-3">M</div><div class="dc-row-4">113</div><div class="dc-row-5">12.6</div><div class="dc-row-6">27</div><div class="dc-row-7">05</div></div><div class="data-column"><div class="dc-row-1">85</div><div class="dc-row-1">12.25</div><div class="dc-row-2">7884</div><div class="dc-row-3">107</div><div class="dc-row-3">5</div><div class="dc-row-4">2022</div><div class="dc-row-5">784</div><div class="dc-row-6">3304</div><div class="dc-row-7">42</div></div><div class="data-column"><div class="dc-row-1">733</div><div class="dc-row-1">1224</div><div class="dc-row-2">5801</div><div class="dc-row-3">23</div><div class="dc-row-3">1015</div><div class="dc-row-4">84</div><div class="dc-row-5">36</div><div class="dc-row-6">029</div><div class="dc-row-7">24</div></div><div class="data-column"><div class="dc-row-1">318</div><div class="dc-row-1">12.24</div><div class="dc-row-2">108</div><div class="dc-row-3">23</div><div class="dc-row-3">174</div><div class="dc-row-4">91</div><div class="dc-row-5">947</div><div class="dc-row-6">28</div><div class="dc-row-7">527</div></div><div class="data-column"><div class="dc-row-1">04</div><div class="dc-row-1">0469</div><div class="dc-row-2">2200</div><div class="dc-row-3">88</div><div class="dc-row-3">1985</div><div class="dc-row-4">540</div><div class="dc-row-5">3121</div><div class="dc-row-6">308</div><div class="dc-row-7">9571</div></div>
+					</div>	<!-- /data-cascade-wrapper -->
+					<nav>
+						{% if previousPost %}
+							<button type="button" class="nav-1 animation-on" onclick="location.href='{{ previousPost.url }}'">PREV</button>
+						{% else %}
+							<button type="button" class="nav-1" disabled>PREV</button>
+						{% endif %}
+						{% if nextPost %}
+							<button type="button" class="nav-2 animation-on" onclick="location.href='{{ nextPost.url }}'">NEXT</button>
+						{% else %}
+							<button type="button" class="nav-2" disabled>NEXT</button>
+						{% endif %}
+						<button type="button" class="nav-3" onclick="location.href='/garden/'">LOGS</button>
+						<button type="button" class="nav-4 animation-on" onclick="location.href='/'">HOME</button>
 					</nav>
 				</div>
 				<div class="bar-panel first-bar-panel">
@@ -47,17 +69,16 @@
 		</div>
 		<div class="wrap" id="gap">
 			<div class="left-frame">
-				<div>
-					<div class="panel-3">03<span class="hop">-111968</span></div>
-					<div class="panel-4">04<span class="hop">-041969</span></div>
-					<div class="panel-5">05<span class="hop">-1701D</span></div>
-					<div class="panel-6">06<span class="hop">-071984</span></div>
-					<div class="panel-7">07<span class="hop">-081940</span></div>
-					<div class="panel-8">08<span class="hop">-47148</span></div>
-					<div class="panel-9">09<span class="hop">-081966</span></div>
+				<button onclick="topFunction()" id="topBtn"><span class="hop">screen</span> top</button>
+				<div aria-hidden="true">
+					<button type="button" class="panel-3" tabindex="-1">03<span class="hop">-111968</span></button>
+					<button type="button" class="panel-4" tabindex="-1">04<span class="hop">-041969</span></button>
+					<button type="button" class="panel-5" tabindex="-1">05<span class="hop">-1701D</span></button>
+					<button type="button" class="panel-6" tabindex="-1">06<span class="hop">-071984</span></button>
+					<div class="panel-spacer"></div>
 				</div>
-				<div>
-					<div class="panel-10">10<span class="hop">-31</span></div>
+				<div aria-hidden="true">
+					<button type="button" class="panel-7" tabindex="-1">07<span class="hop">-081940</span></button>
 				</div>
 			</div>
 			<div class="right-frame">
@@ -73,34 +94,27 @@
 					<!-- Start your content here. -->
 
 					<h1>Captain's Log</h1>
-		
-					<h2>Earth Date <span class="go-tomato"> {{ title }} </span></h2>
+
+					<h2>Earth Date <span class="font-orange">{{ title }}</span></h2>
 
 					{{ content | safe }}
 
 					<!-- End content area. -->
 
-					<footer>
-						<div class="footer-inside">
-							<div class="footer-text">
-
-								<p> <!-- Your copyright information is only a suggestion. You can also choose to delete this paragraph. -->
-									Content Copyright &#169; 2025 Isaiah Young
-								</p>
-
-								<p>	<!-- This paragraph must not be removed. -->
-									LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com, with modifications.</a>
-								</p>
-
-							</div>
-						</div>
-						<div class="footer-panel"> <span class="hop">22</span>47 </div>
-					</footer>
 				</main>
+				<footer>
+					<!-- Your copyright information is only a suggestion and you can choose to delete it. -->
+					Content Copyright &#169; {% year %} Isaiah Young <br>
+
+					<!-- The following attribution must not be removed: -->
+					LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com</a>, with modifications.
+				</footer>
 			</div>
 		</div>
-	</section>	
-	{# <script type="text/javascript" src="assets/lcars.js"></script> #}
+	</section>
+	<script>{% include 'scripts/lcars.js' %}</script>
+	<div class="headtrim"> </div>
+	<div class="baseboard"> </div>
 </body>
 
 </html>
