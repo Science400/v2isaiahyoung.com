@@ -1,0 +1,71 @@
+name: Build
+
+# Catches broken builds here rather than on Cloudflare. Cloudflare runs
+# `npx @11ty/eleventy` from its dashboard config, so this workflow deliberately
+# runs BOTH that command and `npm run build`: the two differ (the npm script
+# also cleans and sets ELEVENTY_ENV), and a break in either is worth knowing about.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+# A newer push to the same branch makes an in-flight run obsolete.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Kept in step with .node-version, which Cloudflare also reads.
+          node-version-file: .node-version
+          cache: npm
+
+      # Eleventy Fetch caches remote responses here. Restoring it keeps CI off
+      # the unauthenticated GitHub and Wikipedia APIs, which rate limit shared
+      # CI addresses and once failed a production deploy.
+      - name: Restore Eleventy Fetch cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: eleventy-fetch-${{ github.run_id }}
+          restore-keys: eleventy-fetch-
+
+      - run: npm ci
+
+      # Mirrors the Cloudflare Pages build command and environment.
+      - name: Build as Cloudflare does
+        run: npx @11ty/eleventy
+        env:
+          CF_PAGES: '1'
+
+      # The repo's own build: adds the clean step and ELEVENTY_ENV=production.
+      - name: Build via npm script
+        run: npm run build
+
+      - name: Check output
+        run: |
+          pages=$(find dist -name '*.html' | wc -l)
+          echo "HTML pages: $pages"
+          test "$pages" -gt 100 || { echo "::error::Only $pages pages built; expected >100"; exit 1; }
+          for f in dist/index.html dist/sitemap.xml dist/_headers dist/feed.xml; do
+            test -s "$f" || { echo "::error::missing or empty: $f"; exit 1; }
+          done
+
+      # The localhost-URL bug shipped silently for months. Fail loudly instead.
+      - name: Assert production URLs
+        run: |
+          if grep -rq "localhost:8080" dist/sitemap.xml dist/llms.txt dist/feed.xml; then
+            echo "::error::localhost URLs leaked into published output"
+            grep -rn "localhost:8080" dist/sitemap.xml dist/llms.txt dist/feed.xml | head
+            exit 1
+          fi
+          grep -q 'canonical" href="https://isaiahyoung.com' dist/index.html \
+            || { echo "::error::canonical is not the production origin"; exit 1; }

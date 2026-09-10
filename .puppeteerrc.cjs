@@ -7,10 +7,11 @@
  * deploy. If that download or its extraction fails, `npm install` exits
  * non-zero and takes the whole deploy down with it.
  *
- * Cloudflare Pages sets CF_PAGES=1 in the build environment, so skip the
- * download there and keep it for local development.
+ * Cloudflare Pages sets CF_PAGES=1 and GitHub Actions sets CI=true, so skip
+ * the download in both and keep it for local development. The accessibility
+ * workflow installs a browser explicitly when it actually needs one.
  * https://developers.cloudflare.com/pages/configuration/build-configuration/#environment-variables
  */
 module.exports = {
-  skipDownload: Boolean(process.env.CF_PAGES)
+  skipDownload: Boolean(process.env.CF_PAGES || process.env.CI)
 };
