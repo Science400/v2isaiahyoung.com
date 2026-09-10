@@ -72,6 +72,15 @@ export default async function (eleventyConfig) {
     sharpOptions: {
       animated: true
     },
+    // Remote images (Wikipedia thumbnails on the Peter and the Wolf pages) are
+    // downloaded at build time. Wikimedia rate limits shared CI and build
+    // addresses, and a single 429 was aborting the entire build. Leave the
+    // original <img> in place instead of failing the deploy.
+    failOnError: false,
+    // Cache remote originals so repeat builds do not re-request them.
+    cacheOptions: {
+      duration: '30d'
+    },
     htmlOptions: {
       imgAttributes: {
         loading: 'lazy',
