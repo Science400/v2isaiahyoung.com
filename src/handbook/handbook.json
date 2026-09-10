@@ -1,5 +1,0 @@
-{
-  "tags": "handbook",
-  "layout": "page",
-  "permalink": "/handbook/{{ title | slugify }}/index.html"
-}
