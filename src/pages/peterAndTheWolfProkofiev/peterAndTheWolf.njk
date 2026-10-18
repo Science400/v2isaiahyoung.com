@@ -5,29 +5,27 @@ description: 'A collection of recordings of Peter and the Wolf by Sergei Prokofi
 permalink: '/peter-wolf/index.html'
 ---
 
-<div class="table-container">
-  <table>
+<div class="table-container recordings-table-container">
+  <table class="recordings-table">
     <thead>
       <tr>
-        <th>Year</th>
-        <th>Narrator</th>
-        <th>Orchestra</th>
-        <th>Conductor</th>
-        <th>Notes</th>
-        <th>Listen</th>
+        <th scope="col">Year</th>
+        <th scope="col">Narrator</th>
+        <th scope="col">Orchestra</th>
+        <th scope="col">Conductor</th>
+        <th scope="col">Listen</th>
       </tr>
     </thead>
     <tbody>
       {% for recording in peterWolfWikipedia %}
-      <tr class="clickable-row" data-href="/peter-wolf/{{ recording.year }}-{{ (recording.narrator | join('-') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) | slugify }}/" tabindex="0" role="button" aria-label="View {{ (recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) }} recording from {{ recording.year }}">
-        <td>{{ recording.year }}</td>
-        <td>{{ recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator }}</td>
-        <td>{{ recording.orchestra }}</td>
-        <td>{{ recording.conductor }}</td>
-        <td>{{ recording.notes or '' }}</td>
-        <td>
+      <tr class="recording-row" data-href="/peter-wolf/{{ recording.year }}-{{ (recording.narrator | join('-') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) | slugify }}/">
+        <td data-label="Year"><a href="/peter-wolf/{{ recording.year }}-{{ (recording.narrator | join('-') if recording.narrator is iterable and recording.narrator is not string else recording.narrator) | slugify }}/">{{ recording.year }}</a></td>
+        <td data-label="Narrator" class="recording-narrator">{{ recording.narrator | join(', ') if recording.narrator is iterable and recording.narrator is not string else recording.narrator }}</td>
+        <td data-label="Orchestra">{{ recording.orchestra }}</td>
+        <td data-label="Conductor">{{ recording.conductor }}</td>
+        <td data-label="Listen" class="recording-listen">
           {% if recording.youtube %}
-            🎵
+            <span aria-label="Available on YouTube">🎵</span>
           {% endif %}
         </td>
       </tr>
@@ -40,24 +38,93 @@ permalink: '/peter-wolf/index.html'
 <div class="stats-section">
   <h2>Recording Statistics</h2>
   <div class="chart-container">
-    <canvas id="recordingsChart" width="800" height="400"></canvas>
+    <svg id="recordingsChart" viewBox="0 0 1000 480" role="img" aria-labelledby="recordingsChartTitle recordingsChartDescription">
+      <title id="recordingsChartTitle">Peter and the Wolf recordings by year</title>
+      <desc id="recordingsChartDescription">A bar chart showing the number of recordings for each year.</desc>
+    </svg>
   </div>
 </div>
 
 {%- css "inline" -%}
   {%- include 'css/table.css' -%}
   
-  .clickable-row {
+  .recording-row {
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
   
-  .clickable-row:hover,
-  .clickable-row:focus {
+  .recording-row:hover {
     background-color: var(--color-bg-hover, rgba(0, 102, 204, 0.1));
-    outline: 2px solid var(--color-primary, #0066cc);
-    outline-offset: -2px;
   }
+  .recordings-table-container {
+    margin-block: 1.5rem;
+  }
+
+  .recordings-table {
+    table-layout: fixed;
+  }
+
+  .recordings-table th {
+    background: var(--color-bg-accent-2, var(--color-bg));
+    font-weight: var(--font-bold);
+  }
+
+  .recordings-table td,
+  .recordings-table th {
+    vertical-align: top;
+    line-height: 1.45;
+  }
+
+  .recordings-table tbody tr:nth-child(even) {
+    background: var(--color-bg-accent-2, rgba(0, 0, 0, 0.035));
+  }
+
+  .recording-listen {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 640px) {
+    .recordings-table th:nth-child(1) { width: 7%; }
+    .recordings-table th:nth-child(2) { width: 23%; }
+    .recordings-table th:nth-child(3) { width: 31%; }
+    .recordings-table th:nth-child(4) { width: 29%; }
+    .recordings-table th:nth-child(5) { width: 10%; }
+  }
+
+  @media (max-width: 639px) {
+    .recordings-table tr {
+      display: block;
+      margin-block-end: var(--space-m, 1rem);
+      padding: var(--space-xs, 0.5rem);
+      border: 1px solid var(--color-bg-accent, currentColor);
+      border-radius: 0.5rem;
+    }
+
+    .recordings-table td {
+      display: grid;
+      grid-template-columns: 6.5rem minmax(0, 1fr);
+      gap: 0.75rem;
+      padding: 0.55rem 0.5rem;
+      border-block-end: 1px solid var(--color-bg-accent, currentColor);
+    }
+
+    .recordings-table td:before {
+      display: block;
+      float: none;
+      color: var(--color-text-accent, inherit);
+    }
+
+    .recordings-table td:last-child {
+      border-block-end: 0;
+    }
+
+    .recording-listen {
+      text-align: start;
+    }
+  }
+  
+  
   
   .stats-section {
     margin: 3rem 0;
@@ -69,29 +136,35 @@ permalink: '/peter-wolf/index.html'
   }
   
   #recordingsChart {
+    display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
+    color: var(--color-text);
+  }
+
+  #recordingsChart .chart-gridline {
+    stroke: currentColor;
+    opacity: 0.2;
+  }
+
+  #recordingsChart .chart-bar {
+    fill: var(--color-primary, #0066cc);
+  }
+
+  #recordingsChart .chart-label {
+    fill: currentColor;
+    font: 14px sans-serif;
   }
 {%- endcss -%}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const clickableRows = document.querySelectorAll('.clickable-row');
-  
-  clickableRows.forEach(row => {
-    row.addEventListener('click', function() {
-      const url = this.dataset.href;
-      if (url && url !== '#') {
-        window.location.href = url;
-      }
-    });
-    
-    row.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
+  document.querySelectorAll('.recording-row').forEach(row => {
+    row.addEventListener('click', event => {
+      if (event.target.closest('a, details, button')) return;
+      const url = row.dataset.href;
+      if (url) window.location.href = url;
     });
   });
 
@@ -120,59 +193,97 @@ document.addEventListener('DOMContentLoaded', function() {
     allCounts.push(yearCounts[year] || 0);
   }
   
-  // Create the chart
-  const ctx = document.getElementById('recordingsChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: allYears,
-      datasets: [{
-        label: 'Number of Recordings',
-        data: allCounts,
-        backgroundColor: 'rgba(0, 102, 204, 0.6)',
-        borderColor: 'rgba(0, 102, 204, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            stepSize: 1
-          },
-          title: {
-            display: true,
-            text: 'Number of Recordings'
-          }
-        },
-        x: {
-          title: {
-            display: true,
-            text: 'Year'
-          },
-          ticks: {
-            maxTicksLimit: 20,
-            callback: function(value, index) {
-              const year = this.getLabelForValue(value);
-              return year % 5 === 0 ? year : '';
-            }
-          }
-        }
-      },
-      plugins: {
-        title: {
-          display: true,
-          text: 'Peter and the Wolf Recordings by Year (1939-2021)'
-        },
-        legend: {
-          display: false
-        }
-      }
+  const chart = document.getElementById('recordingsChart');
+  const svgNamespace = 'http://www.w3.org/2000/svg';
+  const title = chart.querySelector('title');
+  const description = chart.querySelector('desc');
+  const maxCount = Math.max(1, ...allCounts);
+  const appendSvg = (tag, attributes, parent) => {
+    const element = document.createElementNS(svgNamespace, tag);
+    Object.entries(attributes).forEach(([name, value]) => element.setAttribute(name, value));
+    parent.appendChild(element);
+    return element;
+  };
+  let renderedWidth;
+
+  const drawChart = () => {
+    const width = Math.max(320, Math.round(chart.clientWidth));
+    if (width === renderedWidth) return;
+    renderedWidth = width;
+    const height = 480;
+    const plot = { left: 54, top: 32, width: width - 74, height: 350 };
+    chart.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    chart.replaceChildren(title, description);
+    const content = appendSvg('g', {}, chart);
+
+    for (let count = 0; count <= maxCount; count++) {
+      const y = plot.top + plot.height - (count / maxCount) * plot.height;
+      appendSvg('line', {
+        class: 'chart-gridline',
+        x1: plot.left,
+        y1: y,
+        x2: plot.left + plot.width,
+        y2: y
+      }, content);
+      const tick = appendSvg('text', {
+        class: 'chart-label',
+        x: plot.left - 10,
+        y,
+        'text-anchor': 'end',
+        'dominant-baseline': 'middle'
+      }, content);
+      tick.textContent = count;
     }
-  });
+
+    const yearStep = plot.width / allYears.length;
+    const barWidth = Math.max(1.5, yearStep * 0.68);
+    const labelInterval = width < 560 ? 10 : 5;
+    allYears.forEach((year, index) => {
+      const value = allCounts[index];
+      const barHeight = (value / maxCount) * plot.height;
+      const x = plot.left + index * yearStep + (yearStep - barWidth) / 2;
+      const bar = appendSvg('rect', {
+        class: 'chart-bar',
+        x,
+        y: plot.top + plot.height - barHeight,
+        width: barWidth,
+        height: barHeight,
+        rx: 1
+      }, content);
+      const barTitle = appendSvg('title', {}, bar);
+      barTitle.textContent = `${year}: ${value} recording${value === 1 ? '' : 's'}`;
+
+      if (year % labelInterval === 0) {
+        const label = appendSvg('text', {
+          class: 'chart-label',
+          x: plot.left + index * yearStep + yearStep / 2,
+          y: plot.top + plot.height + 24,
+          'text-anchor': 'middle'
+        }, content);
+        label.textContent = year;
+      }
+    });
+
+    const xTitle = appendSvg('text', {
+      class: 'chart-label',
+      x: plot.left + plot.width / 2,
+      y: 462,
+      'text-anchor': 'middle'
+    }, content);
+    xTitle.textContent = 'Year';
+
+    const yTitle = appendSvg('text', {
+      class: 'chart-label',
+      x: 16,
+      y: plot.top + plot.height / 2,
+      'text-anchor': 'middle',
+      transform: `rotate(-90 16 ${plot.top + plot.height / 2})`
+    }, content);
+    yTitle.textContent = 'Number of Recordings';
+  };
+
+  drawChart();
+  new ResizeObserver(drawChart).observe(chart);
 });
 </script>
 

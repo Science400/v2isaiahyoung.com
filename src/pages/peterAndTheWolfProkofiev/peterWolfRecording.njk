@@ -26,6 +26,10 @@ permalink: '/peter-wolf/{{recording.year}}-{{(recording.narrator | join("-") if 
         {% endif %}
     {% endif %}
 
+    {% if not recording.youtube %}
+        <a href="https://www.youtube.com/results?search_query=peter%20and%20the%20wolf%20{{ recording.year }}%20{{ recording.narrator }}" target="_blank" rel="noopener noreferrer">Search on YouTube</a>
+    {% endif %}
+
     <h2>Recording Info</h2>
     {% if recording.year %}
     <h3>Year</h3>
