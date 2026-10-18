@@ -100,6 +100,25 @@ permalink: '/peter-wolf/{{recording.year}}-{{(recording.narrator | join("-") if 
     {% endif %}
     {% endif %}
 
+    {% if recording.musicians %}
+    <h3>Musicians</h3>
+    {% for musician in recording.musicians %}
+        {% set musicianWikipedia = recording.musiciansWikipedia[loop.index0] if recording.musiciansWikipedia else null %}
+        <h4>{{ musician }}</h4>
+        {% if musicianWikipedia and musicianWikipedia.extract_html %}
+            {% if musicianWikipedia.thumbnail %}
+            <div style="text-align: center;">
+                <img src="{{ musicianWikipedia.thumbnail.source }}" alt="{{ musician }}" width="{{ musicianWikipedia.thumbnail.width }}" height="{{ musicianWikipedia.thumbnail.height }}">
+            </div>
+            {% endif %}
+            <div>{{ musicianWikipedia.extract_html | safe }}</div>
+            {% if musicianWikipedia.content_urls %}
+            <p><a href="{{ musicianWikipedia.content_urls.desktop.page }}" target="_blank">Read more on Wikipedia</a></p>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
     {% if recording.notes %}
     <h3>Notes</h3>
     <p>{{ recording.notes }}</p>
