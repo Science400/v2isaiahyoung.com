@@ -16,7 +16,7 @@ excludeFromSitemap: true
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: autoplay=(), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()
+  Permissions-Policy: autoplay=(self), camera=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), publickey-credentials-get=()
 
 # Content-hashed filenames: safe to cache forever.
 /bundle/*
@@ -27,6 +27,9 @@ excludeFromSitemap: true
 
 # Width-suffixed but not content-hashed: long cache, not immutable.
 /assets/images/*
+  Cache-Control: public, max-age=31536000
+
+/assets/video/*
   Cache-Control: public, max-age=31536000
 
 /assets/fonts/*
